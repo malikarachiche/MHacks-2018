@@ -15,6 +15,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func sneakersButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func handbagButton(_ sender: UIButton) {
+    }
+    @IBAction func watchesButton(_ sender: UIButton) {
+    }
 }
 
