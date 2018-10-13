@@ -6,7 +6,7 @@ target 'MHacks StockX' do
   use_frameworks!
     pod 'Alamofire', '~> 4.7'
     pod 'SwiftyJSON', '~> 4.0'
-	
+	pod 'DropDown', '~> 2.3.4'
     pod ‘Firebase/Core’
     pod ‘Firebase/Database’
     pod ‘Firebase/Auth’

@@ -32,10 +32,10 @@ class DataService{
         
         var productArray: [Product] = []
         
-        base_urlString = base_urlString + "/v1/browse?limi1=100"
+        base_urlString = base_urlString + "/v1/browse?limit=500"
         var base_url = URL(string: base_urlString)
         
-        Alamofire.request(base_url!, method: .get, parameters: ["limit":"100"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
+        Alamofire.request(base_url!, method: .get, parameters: ["limit":"500"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
            
             if(response.result.error == nil){
                 guard let data = response.data else { return }
@@ -47,11 +47,14 @@ class DataService{
                         
                         
                         for item in array{
-                            if(item["productCategory"].stringValue == category){
+                            if(item["brand"].stringValue == category || category == ""){
                                 
-                           let img = item["media"]["smallImageUrl"].stringValue
-                                let description = item["shortDescription"].stringValue
-                                var currentB = "The current bid is $"
+                           var img = item["media"]["smallImageUrl"].stringValue
+                                if(img == ""){
+                                    img = item["media"]["thumbUrl"].stringValue
+                                }
+                                let description = item["shoe"].stringValue
+                                var currentB = "The starting price is $"
                                currentB = currentB + item["market"]["lowestAsk"].stringValue
                                
                                 
@@ -60,10 +63,11 @@ class DataService{
                                 
 let product = Product(description: description, currentBid: currentB, image: img)
                                 productArray.append(product)
+                                
 
                             
                         }
-                            
+                            print(productArray)
                         completion(productArray)
                         
                     }
@@ -79,38 +83,9 @@ let product = Product(description: description, currentBid: currentB, image: img
         }
         
     }
+
     
-//    func getTopProductsCurrBid(completion: @escaping ([Product]?)->(), prodArray: [Product]){
-//        for item in prodArray {
-//
-//            base_urlString = base_urlString + "/v1/products/" + item.uuid! + "?includes=market"
-//
-//            var base_Url = URL(string: base_urlString )
-//
-//            Alamofire.request(base_Url!, method: .get, parameters: ["id":"\(item.uuid!)"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
-//
-//                if(response.result.error == nil){
-//                    guard let data = response.data else { return }
-//                    do{
-//                        let json = try JSON(data: data)
-//
-//                      let currentB = json["Product"]["children"]
-//
-//                    }catch{
-//
-//                    }
-//                }
-//                else{
-//
-//                }
-//
-//            }
-//
-//
-//
-//
-//        }
-//    }
+   
 }
 
 

@@ -13,11 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
        
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func sneakerBtnPressed(_ sender: Any) {
@@ -25,14 +21,6 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "hiSegue", sender: self)
     }
     
-    @IBAction func streetwearBtnPressed(_ sender: Any) {
-        self.whichProd = "streetwear"
-         self.performSegue(withIdentifier: "hiSegue", sender: self)
-    }
-    @IBAction func watchesBtnPressed(_ sender: Any) {
-         self.whichProd = "watches"
-         self.performSegue(withIdentifier: "hiSegue", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! CategoryVC
