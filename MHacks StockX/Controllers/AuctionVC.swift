@@ -39,6 +39,8 @@ class AuctionVC: UIViewController {
     
     var fdiff = 0.0
     
+    var maxProdAmount = "0.0"
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         guard let uuid = product.uuid else {
@@ -52,6 +54,8 @@ class AuctionVC: UIViewController {
         guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
             return
         }
+            
+        
         
         print(time)
         let myFloat = (time as NSString).doubleValue
@@ -81,40 +85,9 @@ class AuctionVC: UIViewController {
         super.viewDidLoad()
         
         productDescriptionLabel.text = product.description!
-        initialPriceLabel.text = product.currentBid!
+        initialPriceLabel.text = "The starting price is $\(product.currentBid!)"
         
         downloadImage(from: URL(string: product.image!)!)
-        
-//        guard let uuid = product.uuid else {
-//            print("vfvgdf")
-//            return
-//        }
-//
-//        DB_BASE.child("Products").child(uuid).child("HighestBid").observe(.value) { (snapshot) in
-//
-//
-//            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
-//                return
-//            }
-//
-//           print(time)
-//            let myFloat = (time as NSString).doubleValue
-//           let diff = Date().timeIntervalSince1970 - myFloat
-//
-//            self.fdiff = 600 - diff
-//            //print(self.fdiff)
-//            if(self.fdiff>0){
-//            self.progressBar.aniDuration = Int(self.fdiff)
-//            }
-//            //print(self.progressBar.aniDuration)
-//
-//
-//            self.progressBar.labelSize = 60
-//            self.progressBar.safePercent = Int(self.fdiff)
-//            self.progressBar.setProgress(to: 1, withAnimation: true)
-//
-//
-//        }
  
         // Do any additional setup after loading the .
     }
@@ -122,37 +95,59 @@ class AuctionVC: UIViewController {
    
     
     @IBAction func bidNow(_ sender: Any) {
-        DataService.instance.bid(product: product, amount: bidTextField.text!)
-        guard let uuid = product.uuid else {
-            print("vfvgdf")
-            return
-        }
-        DB_BASE.child("Products").child(uuid).child("HighestBid").observe(.value) { (snapshot) in
-            
-            
-            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
+        var x = bidTextField.text!
+        var y = maxProdAmount
+        print("The double val = \(Double(x)!)")
+        print("The double val = \(Double(y)!)")
+        if(Double(x)! > Double(y)!) {
+            DataService.instance.bid(product: product, amount: bidTextField.text!)
+            guard let uuid = product.uuid else {
+                print("vfvgdf")
                 return
             }
-            
-            print(time)
-            let myFloat = (time as NSString).doubleValue
-            let diff = Date().timeIntervalSince1970 - myFloat
-            
-            self.fdiff = 120 - diff
-            //print(self.fdiff)
-            if(self.fdiff > 0 && self.fdiff<=120){
-                self.progressBar.aniDuration = Int(self.fdiff)
+            DB_BASE.child("Products").child(uuid).child("HighestBid").observe(.value) { (snapshot) in
+                
+                
+                guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
+                    return
+                }
+                
+                guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
+                    return
+                }
+                
+                self.maxProdAmount = amount
+                
+                let myFloat = (time as NSString).doubleValue
+                let diff = Date().timeIntervalSince1970 - myFloat
+                
+                self.fdiff = 120 - diff
+                //print(self.fdiff)
+                if(self.fdiff > 0 && self.fdiff<=120){
+                    self.progressBar.aniDuration = Int(self.fdiff)
+                }
+                //print(self.progressBar.aniDuration)
+                
+                
+                self.progressBar.labelSize = 60
+                self.progressBar.safePercent = Int(self.fdiff)
+                self.progressBar.setProgress(to: 1, withAnimation: true)
+                
+                
             }
-            //print(self.progressBar.aniDuration)
-            
-            
-            self.progressBar.labelSize = 60
-            self.progressBar.safePercent = Int(self.fdiff)
-            self.progressBar.setProgress(to: 1, withAnimation: true)
-            
-            
+        } else {
+            alertcontrollerDisplay(message: "Enter an amount greater than the max bid")
         }
+        
         //self.dismiss(animated: true, completion: nil)
+    }
+    
+    func alertcontrollerDisplay(message: String){
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func dismissController(_ sender: Any) {
