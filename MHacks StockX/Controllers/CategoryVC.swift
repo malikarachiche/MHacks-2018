@@ -11,15 +11,22 @@ import UIKit
 class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var productsArr : [Product] = [Product(description: "YOOhfksdbkbkvskvbhskdhbvksdbvksdbvretgehrthyrththyfthfjhgfhcddhydththtdyhdhtjjtykjbvkjbvkjsbnkvjlndsnvlsOOO", currentBid: "300", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg", uuid: ""), Product(description: "BITTCH", currentBid: "200", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg", uuid: "")];
+    var productsArr : [Product] = []
+    var whichProd: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.reloadData()
+        DataService.instance.getTopProduct(completion: { (response) in
+            print(response!)
+            self.productsArr = response!
+            
+            self.collectionView.delegate = self
+            self.collectionView.dataSource = self
+            self.collectionView.reloadData()
 
+        }, category: "\(whichProd)")
+        
         // Do any additional setup after loading the view.
     }
     
