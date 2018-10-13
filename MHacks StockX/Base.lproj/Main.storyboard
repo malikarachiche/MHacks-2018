@@ -218,24 +218,26 @@
                                                     <action selector="bidNow:" destination="ic1-88-po0" eventType="touchUpInside" id="1O5-Ko-6qa"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-c8-FhH" customClass="CircularProgressIndicator" customModule="MHacks_StockX" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-c8-FhH" customClass="CircularProgressBar" customModule="MHacks_StockX" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="432" width="315" height="315"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hN-kj-s6X">
-                                                        <rect key="frame" x="40" y="86" width="235" height="143"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="yYp-c8-FhH" secondAttribute="height" multiplier="1:1" id="5DG-FM-sPf"/>
-                                                    <constraint firstItem="0hN-kj-s6X" firstAttribute="width" secondItem="yYp-c8-FhH" secondAttribute="width" constant="-80" id="DrJ-iB-lcR"/>
-                                                    <constraint firstItem="0hN-kj-s6X" firstAttribute="centerY" secondItem="yYp-c8-FhH" secondAttribute="centerY" id="sXs-lQ-lXS"/>
-                                                    <constraint firstItem="0hN-kj-s6X" firstAttribute="centerX" secondItem="yYp-c8-FhH" secondAttribute="centerX" id="y6l-E9-xo8"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHB-6K-cBO">
+                                                <rect key="frame" x="15" y="0.0" width="37" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Done"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0q-nh-8Ii">
+                                                <rect key="frame" x="15" y="-1" width="37" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="dismissController:" destination="ic1-88-po0" eventType="touchUpInside" id="Yed-xR-8yw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -290,12 +292,11 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="bidTextField" destination="zKe-4u-NE8" id="Tlf-Xx-Oyr"/>
-                        <outlet property="circProgressIndi" destination="yYp-c8-FhH" id="cf1-Im-Yty"/>
-                        <outlet property="countdownLbl" destination="0hN-kj-s6X" id="QmB-sS-SIq"/>
                         <outlet property="currentBidLabel" destination="Jdu-Z5-gWB" id="gJA-Oo-uy1"/>
                         <outlet property="initialPriceLabel" destination="Fde-5e-ejw" id="gvE-Sy-zsb"/>
                         <outlet property="productDescriptionLabel" destination="Mw5-ej-f8g" id="1el-XL-YxK"/>
                         <outlet property="productImageView" destination="iU9-Je-FKa" id="ARP-zF-Ks6"/>
+                        <outlet property="progressBar" destination="yYp-c8-FhH" id="BtG-lU-Vb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHt-QL-he6" userLabel="First Responder" sceneMemberID="firstResponder"/>
