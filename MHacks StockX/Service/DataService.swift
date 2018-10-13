@@ -74,6 +74,7 @@ class DataService{
         
     }
 
+
 //    func bid(product : Product, amount : String) {
 //        let ID = SwiftyUUID.UUID()
 //        let idString = ID.CanonicalString()
@@ -83,7 +84,6 @@ class DataService{
 //        REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
 //        REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
 //    }
-   
 }
 
 
