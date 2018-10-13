@@ -19,6 +19,9 @@
 		9E6A9CE1BA65C78946990885 /* Pods_MHacks_StockXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */; };
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
 		D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BE92171B4ED0044BC65 /* DataService.swift */; };
+		D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */; };
+		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
+		D57E7BF02171C0900044BC65 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEF2171C0900044BC65 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		9F589134881F021FE89B4C2A /* Pods-MHacks StockXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B922BACE5FF87E8505CBEA /* Pods-MHacks StockX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.debug.xcconfig"; sourceTree = "<group>"; };
 		D57E7BE92171B4ED0044BC65 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCCollectionCell.swift; sourceTree = "<group>"; };
+		D57E7BEF2171C0900044BC65 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F5C13403224C1D59042B726B /* Pods-MHacks StockX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.release.xcconfig"; sourceTree = "<group>"; };
 		FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,7 +124,7 @@
 		4542056921718462009B69FA /* MHacks StockX */ = {
 			isa = PBXGroup;
 			children = (
-				D57E7BE82171B4CD0044BC65 /* VC */,
+				D57E7BE82171B4CD0044BC65 /* Controllers */,
 				D57E7BE62171B4BA0044BC65 /* Service */,
 				D57E7BE52171B4B10044BC65 /* Model */,
 				4542056A21718462009B69FA /* AppDelegate.swift */,
@@ -175,6 +181,8 @@
 		D57E7BE52171B4B10044BC65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
+				D57E7BEF2171C0900044BC65 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,12 +195,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		D57E7BE82171B4CD0044BC65 /* VC */ = {
+		D57E7BE82171B4CD0044BC65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				4542056C21718462009B69FA /* ViewController.swift */,
+				D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */,
 			);
-			path = VC;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,10 +442,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */,
 				4542056D21718462009B69FA /* ViewController.swift in Sources */,
 				4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */,
+				D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */,
 				4542056B21718462009B69FA /* AppDelegate.swift in Sources */,
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
+				D57E7BF02171C0900044BC65 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

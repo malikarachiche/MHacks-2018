@@ -15,12 +15,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func sneakersButton(_ sender: UIButton) {
+    @IBAction func sneakerBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "hiSegue", sender: self)
     }
     
-    @IBAction func handbagButton(_ sender: UIButton) {
+    @IBAction func streetwearBtnPressed(_ sender: Any) {
     }
-    @IBAction func watchesButton(_ sender: UIButton) {
+    @IBAction func watchesBtnPressed(_ sender: Any) {
     }
+    
 }
 
