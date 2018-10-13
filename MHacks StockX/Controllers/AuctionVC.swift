@@ -86,7 +86,23 @@ class AuctionVC: UIViewController {
         
         productDescriptionLabel.text = product.description!
         initialPriceLabel.text = "The starting price is $\(product.currentBid!)"
-        
+        guard let uuid = product.uuid else {
+            print("vfvgdf")
+            return
+        }
+        DB_BASE.child("Products").child(uuid).child("HighestBid").observe(.value) { (snapshot) in
+            
+            
+            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? Double else{
+                return
+            }
+            if(amount == 0.0){
+                self.currentBidLabel.text = ""
+            } else {
+                self.currentBidLabel.text = "$\(amount)"
+            }
+        }
+        self.currentBidLabel.text = ""
         downloadImage(from: URL(string: product.image!)!)
  
         // Do any additional setup after loading the .
@@ -112,12 +128,9 @@ class AuctionVC: UIViewController {
                     return
                 }
                 
-                guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
-                    return
-                }
+                self.currentBidLabel.text = "Current bid : $\(self.bidTextField.text!)"
                 
-                self.maxProdAmount = amount
-                
+                print(time)
                 let myFloat = (time as NSString).doubleValue
                 let diff = Date().timeIntervalSince1970 - myFloat
                 
