@@ -59,7 +59,7 @@ class DataService{
                                 let product = Product(description: description, currentBid: currentB, image: img, uuid: uid)
                                 productArray.append(product)
                         }
-                            print(productArray)
+                        //    print(productArray)
                         completion(productArray)
                         
                     }
@@ -77,13 +77,13 @@ class DataService{
     func bid(product : Product, amount : String) {
         let ID = SwiftyUUID.UUID()
         let idString = ID.CanonicalString()
-
+       
         let time = Date().timeIntervalSince1970
-        let values = ["Puid" : "gyu", "Amount" : amount, "Time" : String(time)] as! [String : String]
+        let values = ["Puid" : "gdhfhbfd", "Amount" : amount, "Time" : String(time)] as [String : String]
+        
         REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
         REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
     }
-
 }
 
 

@@ -23,9 +23,9 @@
 		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
 		D57E7BF02171C0900044BC65 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEF2171C0900044BC65 /* Product.swift */; };
 		D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF1217238270044BC65 /* AuctionVC.swift */; };
-		D57E7BF421723C960044BC65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D57E7BF321723C960044BC65 /* GoogleService-Info.plist */; };
-		D57E7BF621724CC90044BC65 /* CircularProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF521724CC90044BC65 /* CircularProgressIndicator.swift */; };
+		D57E7BF621724CC90044BC65 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */; };
 		D57E7BF8217256460044BC65 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF7217256460044BC65 /* Config.swift */; };
+		D57E7BFC217263FA0044BC65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D57E7BFB217263FA0044BC65 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +72,9 @@
 		D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCCollectionCell.swift; sourceTree = "<group>"; };
 		D57E7BEF2171C0900044BC65 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D57E7BF1217238270044BC65 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
-		D57E7BF321723C960044BC65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D57E7BF521724CC90044BC65 /* CircularProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicator.swift; sourceTree = "<group>"; };
+		D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		D57E7BF7217256460044BC65 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D57E7BFB217263FA0044BC65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5C13403224C1D59042B726B /* Pods-MHacks StockX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.release.xcconfig"; sourceTree = "<group>"; };
 		FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,8 +136,8 @@
 				D57E7BE62171B4BA0044BC65 /* Service */,
 				D57E7BE52171B4B10044BC65 /* Model */,
 				4542056A21718462009B69FA /* AppDelegate.swift */,
-				D57E7BF321723C960044BC65 /* GoogleService-Info.plist */,
 				4542056E21718462009B69FA /* Main.storyboard */,
+				D57E7BFB217263FA0044BC65 /* GoogleService-Info.plist */,
 				4542057421718465009B69FA /* Assets.xcassets */,
 				4542057621718465009B69FA /* LaunchScreen.storyboard */,
 				4542057921718465009B69FA /* Info.plist */,
@@ -192,7 +192,7 @@
 			children = (
 				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
 				D57E7BEF2171C0900044BC65 /* Product.swift */,
-				D57E7BF521724CC90044BC65 /* CircularProgressIndicator.swift */,
+				D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */,
 				D57E7BF7217256460044BC65 /* Config.swift */,
 			);
 			path = Model;
@@ -325,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4542057821718465009B69FA /* LaunchScreen.storyboard in Resources */,
-				D57E7BF421723C960044BC65 /* GoogleService-Info.plist in Resources */,
+				D57E7BFC217263FA0044BC65 /* GoogleService-Info.plist in Resources */,
 				4542057521718465009B69FA /* Assets.xcassets in Resources */,
 				4542057021718462009B69FA /* Main.storyboard in Resources */,
 			);
@@ -402,6 +402,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -414,6 +415,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -463,7 +465,7 @@
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
 				D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */,
 				D57E7BF8217256460044BC65 /* Config.swift in Sources */,
-				D57E7BF621724CC90044BC65 /* CircularProgressIndicator.swift in Sources */,
+				D57E7BF621724CC90044BC65 /* CircularProgressBar.swift in Sources */,
 				D57E7BF02171C0900044BC65 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
