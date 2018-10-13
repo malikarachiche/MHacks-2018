@@ -30,9 +30,6 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableViewConstraint.constant = 0
@@ -47,7 +44,6 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             self.collectionView.reloadData()
             self.removeSpinner()
         }, category: "")
-        
         
         
     }
@@ -136,7 +132,6 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             self.collectionView.reloadData()
         }, category: dataSrc[indexPath.row])
         
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -144,5 +139,4 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         vc.product = selectedProduct
     }
 
-   
 }
