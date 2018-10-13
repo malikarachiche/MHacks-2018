@@ -27,7 +27,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
         }, category: "\(whichProd)")
         
-        // Do any additional setup after loading the view.
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,9 +36,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatVCCollectionCell", for: indexPath) as! CatVCCollectionCell
-//        cell.layer.borderColor = UIColor.black.cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 8
+
         cell.product = productsArr[indexPath.row]
         return cell
     }
@@ -50,14 +48,5 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
