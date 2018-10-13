@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jrC-Wz-BR8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hlS-te-o0M">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,68 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Stock X-->
-        <scene sceneID="ohc-nv-yxs">
-            <objects>
-                <viewController id="1jr-n7-NS8" customClass="ViewController" customModule="MHacks_StockX" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2fo-pt-3Wb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="0se-XK-GGc">
-                                <rect key="frame" x="5" y="93" width="365" height="680"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBM-wX-j4e">
-                                        <rect key="frame" x="0.0" y="0.0" width="365" height="200.66666666666666"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Sneakers"/>
-                                        <connections>
-                                            <action selector="sneakerBtn:" destination="K3S-Tp-d9F" eventType="touchUpInside" id="Vw6-c3-OrI"/>
-                                            <action selector="sneakerBtnPressed:" destination="1jr-n7-NS8" eventType="touchUpInside" id="fWl-xT-CZ6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb5-Vn-Fbm">
-                                        <rect key="frame" x="0.0" y="239.66666666666669" width="365" height="200.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Streetwear"/>
-                                        <connections>
-                                            <action selector="streetwearBtnPressed:" destination="1jr-n7-NS8" eventType="touchUpInside" id="7uT-Xr-Fmf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KW0-FQ-dF3">
-                                        <rect key="frame" x="0.0" y="479.33333333333343" width="365" height="200.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <state key="normal" title="Watches"/>
-                                        <connections>
-                                            <action selector="watchesBtnPressed:" destination="1jr-n7-NS8" eventType="touchUpInside" id="gFx-v1-p8w"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="riX-hP-ibm" firstAttribute="bottom" secondItem="0se-XK-GGc" secondAttribute="bottom" constant="5" id="BF3-jc-Ifq"/>
-                            <constraint firstItem="0se-XK-GGc" firstAttribute="leading" secondItem="riX-hP-ibm" secondAttribute="leading" constant="5" id="dIV-yX-cHe"/>
-                            <constraint firstItem="riX-hP-ibm" firstAttribute="trailing" secondItem="0se-XK-GGc" secondAttribute="trailing" constant="5" id="q2I-qJ-gfM"/>
-                            <constraint firstItem="0se-XK-GGc" firstAttribute="top" secondItem="riX-hP-ibm" secondAttribute="top" constant="5" id="vYY-3N-DP9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="riX-hP-ibm"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Stock X" id="Z2e-m5-Sdc">
-                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="tX8-hn-r4s"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="jDD-Pj-yk6"/>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="uHe-m1-szV" kind="show" identifier="hiSegue" id="cq1-yp-7Ah"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GPC-PR-OWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="K3S-Tp-d9F" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="788" y="-752.21674876847294"/>
-        </scene>
-        <!--CategoryVC-->
+        <!--StockX-->
         <scene sceneID="sd4-mh-Qmh">
             <objects>
                 <viewController id="uHe-m1-szV" customClass="CategoryVC" customModule="MHacks_StockX" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,31 +93,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vY8-kS-gtz"/>
                     </view>
+                    <navigationItem key="navigationItem" title="StockX" id="YnV-cg-4QL"/>
                     <connections>
                         <outlet property="collectionView" destination="PoL-Kd-DWI" id="Nbx-fH-TED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOU-QS-Vwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="-740.39408866995075"/>
+            <point key="canvasLocation" x="2060" y="-752.21674876847294"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="yuK-pI-gcV">
+        <scene sceneID="MDS-Go-N3N">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jrC-Wz-BR8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hlS-te-o0M" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WKK-Oo-1c0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Js2-lt-oz3">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1jr-n7-NS8" kind="relationship" relationship="rootViewController" id="BPM-Rf-ejD"/>
+                        <segue destination="uHe-m1-szV" kind="relationship" relationship="rootViewController" id="VHn-L7-r3r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nYu-2L-POb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mo9-rY-ycb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-154.40000000000001" y="-752.21674876847294"/>
+            <point key="canvasLocation" x="1117.5999999999999" y="-752.21674876847294"/>
         </scene>
     </scenes>
 </document>
