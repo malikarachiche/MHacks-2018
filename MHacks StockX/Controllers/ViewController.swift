@@ -9,28 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-var product: [Product] = []
+    var whichProd = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataService.instance.getTopProduct(completion: { (response) in
-           print(response!)
-                self.product = response!
-            
-        }, category: "sneakers")
+       
         
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func sneakerBtnPressed(_ sender: Any) {
+        self.whichProd = "sneakers"
         self.performSegue(withIdentifier: "hiSegue", sender: self)
     }
     
     @IBAction func streetwearBtnPressed(_ sender: Any) {
+        self.whichProd = "streetwear"
+         self.performSegue(withIdentifier: "hiSegue", sender: self)
     }
     @IBAction func watchesBtnPressed(_ sender: Any) {
+         self.whichProd = "watches"
+         self.performSegue(withIdentifier: "hiSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! CategoryVC
+        if(segue.identifier == "hiSegue"){
+            vc.whichProd = self.whichProd
+        }
+    }
 }
 

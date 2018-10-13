@@ -36,7 +36,7 @@ class DataService{
         var base_url = URL(string: base_urlString)
         
         Alamofire.request(base_url!, method: .get, parameters: ["limit":"100"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
-            //print(response)
+           
             if(response.result.error == nil){
                 guard let data = response.data else { return }
                 do{
@@ -49,12 +49,16 @@ class DataService{
                         for item in array{
                             if(item["productCategory"].stringValue == category){
                                 
-                          // let img = item["media"]["imageUrl"].stringValue
+                           let img = item["media"]["smallImageUrl"].stringValue
                                 let description = item["shortDescription"].stringValue
-                                let uuid = item["uuid"].stringValue
+                                var currentB = "The current bid is $"
+                               currentB = currentB + item["market"]["lowestAsk"].stringValue
+                               
+                                
+                            
                                 
                                 
-let product = Product(description: description, currentBid: "", image: "", uuid: uuid)
+let product = Product(description: description, currentBid: currentB, image: img)
                                 productArray.append(product)
 
                             
@@ -78,18 +82,33 @@ let product = Product(description: description, currentBid: "", image: "", uuid:
     
 //    func getTopProductsCurrBid(completion: @escaping ([Product]?)->(), prodArray: [Product]){
 //        for item in prodArray {
-//            
+//
 //            base_urlString = base_urlString + "/v1/products/" + item.uuid! + "?includes=market"
-//            
+//
 //            var base_Url = URL(string: base_urlString )
-//            
-//            Alamofire.request(base_Url, method: .get, parameters: ["id":"\(item.uuid!)"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
-//                
+//
+//            Alamofire.request(base_Url!, method: .get, parameters: ["id":"\(item.uuid!)"], headers: ["x-api-key":"B1sR9t386d6UVO6aI7KRf91gLaUywqEK1TLBGsXv"]).responseJSON { (response) in
+//
+//                if(response.result.error == nil){
+//                    guard let data = response.data else { return }
+//                    do{
+//                        let json = try JSON(data: data)
+//
+//                      let currentB = json["Product"]["children"]
+//
+//                    }catch{
+//
+//                    }
+//                }
+//                else{
+//
+//                }
+//
 //            }
-//            
-//            
-//            
-//            
+//
+//
+//
+//
 //        }
 //    }
 }
