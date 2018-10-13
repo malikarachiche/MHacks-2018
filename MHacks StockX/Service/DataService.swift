@@ -59,12 +59,8 @@ class DataService{
                                
                                 
                             
-                                
-                                
 let product = Product(description: description, currentBid: currentB, image: img)
                                 productArray.append(product)
-                                
-
                             
                         }
                             print(productArray)
@@ -84,8 +80,6 @@ let product = Product(description: description, currentBid: currentB, image: img
         
     }
 
-    
-   
 }
 
 
