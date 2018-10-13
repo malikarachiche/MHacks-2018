@@ -8,18 +8,33 @@
 
 import UIKit
 
-class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     var productsArr : [Product] = []
     var whichProd: String = "sneakers"
     var spinner: UIActivityIndicatorView?
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var Selectbtn: UIButton!
+    
+    var dataSrc = ["Jordan", "Saucony", "Diadora", "Under Armour", "Off-White", "Fear of God", "Puma", "Nike", "Reebok", "Louis Vuitton", "Revenge X Storm", "Asics", "Vans", "Adidas", "A Bathing Ape", "New Balance", "Converse" ]
+    
+    @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableViewConstraint.constant = 0
+        
         addSpinner()
         DataService.instance.getTopProduct(completion: { (response) in
-            print(response!)
+            
             self.productsArr = response!
             
             self.collectionView.delegate = self
@@ -28,7 +43,29 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             self.removeSpinner()
         }, category: "\(whichProd)")
         
-       
+        
+        
+    }
+    
+    @IBAction func selectBtnPressed(_ sender: Any) {
+        if( self.tableViewConstraint.constant == 0){
+            animate(toggle: true)
+        }
+        else{
+            animate(toggle: false)
+        }
+    }
+    
+    func animate(toggle: Bool){
+        if(toggle){
+            UIView.animate(withDuration: 0.3) {
+                self.tableViewConstraint.constant = 138
+            }
+        }else{
+            UIView.animate(withDuration: 0.3) {
+                self.tableViewConstraint.constant = 0
+            }
+        }
     }
     
     func addSpinner(){
@@ -62,6 +99,21 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         let collectionViewSize = collectionView.frame.size.width - padding
         
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSrc.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TVCell", for: indexPath)
+        cell.textLabel?.text = dataSrc[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Selectbtn.setTitle("\(dataSrc[indexPath.row])", for: .normal)
+        animate(toggle: false)
     }
 
    
