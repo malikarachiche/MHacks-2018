@@ -21,12 +21,15 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var Selectbtn: UIButton!
     
-    var dataSrc = ["Jordan", "Saucony", "Diadora", "Under Armour", "Off-White", "Fear of God", "Puma", "Nike", "Reebok", "Louis Vuitton", "Revenge X Storm", "Asics", "Vans", "Adidas", "A Bathing Ape", "New Balance", "Converse" ]
+    var dataSrc = ["Jordan", "Saucony", "Diadora", "Under Armour", "Off-White", "Fear of God", "Puma", "Nike", "Reebok", "Louis Vuitton", "Revenge X Storm", "Asics", "Vans", "adidas", "A Bathing Ape", "New Balance", "Converse" ]
     
     @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,7 +44,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             self.collectionView.dataSource = self
             self.collectionView.reloadData()
             self.removeSpinner()
-        }, category: "\(whichProd)")
+        }, category: "")
         
         
         
@@ -72,7 +75,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         spinner = UIActivityIndicatorView()
         spinner?.center = CGPoint(x: (UIScreen.main.bounds.width/2) - ((spinner?.frame.width)!/2), y: 150)
         spinner?.style = .whiteLarge
-        spinner?.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        spinner?.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         spinner?.startAnimating()
         collectionView?.addSubview(spinner!)
     }
@@ -114,6 +117,19 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Selectbtn.setTitle("\(dataSrc[indexPath.row])", for: .normal)
         animate(toggle: false)
+        self.addSpinner()
+        DataService.instance.getTopProduct(completion: { (response) in
+            
+            self.productsArr = response!
+            
+            self.collectionView.delegate = self
+            self.collectionView.dataSource = self
+            self.collectionView.reloadData()
+            self.removeSpinner()
+            self.collectionView.reloadData()
+        }, category: dataSrc[indexPath.row])
+        
+        
     }
 
    
