@@ -16,12 +16,12 @@ import FirebaseDatabase
 import SwiftyUUID
 import Firebase
 
-//let DB_BASE = Database.database().reference()
+let DB_BASE = Database.database().reference()
 
 class DataService{
 
     static let instance = DataService()
-    //var REF_BASE = DB_BASE
+    var REF_BASE = DB_BASE
     
     var base_urlString = "https://gateway.stockx.com/public"
    
@@ -74,15 +74,15 @@ class DataService{
         
     }
 
-//    func bid(product : Product, amount : String) {
-//        let ID = SwiftyUUID.UUID()
-//        let idString = ID.CanonicalString()
-//
-//        let time = Date().timeIntervalSince1970
-//        let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)]
-//        REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
-//        REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
-//    }
+    func bid(product : Product, amount : String) {
+        let ID = SwiftyUUID.UUID()
+        let idString = ID.CanonicalString()
+
+        let time = Date().timeIntervalSince1970
+        let values = ["Puid" : "gyu", "Amount" : amount, "Time" : String(time)] as! [String : String]
+        REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
+        REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
+    }
    
 }
 

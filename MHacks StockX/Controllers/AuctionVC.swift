@@ -30,6 +30,7 @@ class AuctionVC: UIViewController {
     }
     
     @IBAction func bidNow(_ sender: Any) {
+        DataService.instance.bid(product: product, amount: bidTextField.text!)
         self.dismiss(animated: true, completion: nil)
     }
     
