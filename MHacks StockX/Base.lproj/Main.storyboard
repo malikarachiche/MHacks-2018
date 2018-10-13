@@ -144,6 +144,7 @@
                         <outlet property="collectionView" destination="PoL-Kd-DWI" id="Nbx-fH-TED"/>
                         <outlet property="tableView" destination="MQt-sC-eyu" id="ljK-30-Rdr"/>
                         <outlet property="tableViewConstraint" destination="y8J-p2-FWy" id="cwb-bW-e3w"/>
+                        <segue destination="ic1-88-po0" kind="presentation" identifier="auctionSegue" id="Dgp-mk-L1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOU-QS-Vwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -153,32 +154,102 @@
         <!--Auction-->
         <scene sceneID="hmN-s0-Gb4">
             <objects>
-                <viewController id="ic1-88-po0" sceneMemberID="viewController">
+                <viewController id="ic1-88-po0" customClass="AuctionVC" customModule="MHacks_StockX" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1qt-Q1-Gde">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zd0-Ms-NAv">
-                                <rect key="frame" x="0.0" y="88" width="375" height="878"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-Xe-ec8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-ej-f8g">
-                                                <rect key="frame" x="106" y="18" width="163" height="67"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Jordan One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-ej-f8g">
+                                                <rect key="frame" x="5" y="10" width="365" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Jx8-Nw-OKh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iU9-Je-FKa">
+                                                <rect key="frame" x="10" y="90" width="355" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="7tS-xF-4uO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initial Price : $230" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fde-5e-ejw">
+                                                <rect key="frame" x="10" y="300" width="355" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="YEQ-sU-meh"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iU9-Je-FKa">
-                                                <rect key="frame" x="35" y="102" width="305" height="196"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bid: $400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdu-Z5-gWB">
+                                                <rect key="frame" x="10" y="360" width="355" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="IRc-oj-LQR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-c8-FhH">
+                                                <rect key="frame" x="10" y="425" width="355" height="200"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="2QG-tr-QI3"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKe-4u-NE8">
+                                                <rect key="frame" x="10" y="640" width="355" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Wl6-3h-6er"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-HS-3mQ">
+                                                <rect key="frame" x="10" y="705" width="355" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="2lK-Be-ofh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                                <state key="normal" title="BID"/>
+                                                <connections>
+                                                    <action selector="bidNow:" destination="ic1-88-po0" eventType="touchUpInside" id="1O5-Ko-6qa"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="iU9-Je-FKa" firstAttribute="top" secondItem="Mw5-ej-f8g" secondAttribute="bottom" constant="10" id="0QG-hb-mgy"/>
+                                            <constraint firstItem="Jdu-Z5-gWB" firstAttribute="top" secondItem="Fde-5e-ejw" secondAttribute="bottom" constant="10" id="3Ac-Vo-7cF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fde-5e-ejw" secondAttribute="trailing" constant="10" id="4We-HA-Fpv"/>
+                                            <constraint firstAttribute="trailing" secondItem="yYp-c8-FhH" secondAttribute="trailing" constant="10" id="5CG-EV-u0h"/>
+                                            <constraint firstAttribute="trailing" secondItem="zKe-4u-NE8" secondAttribute="trailing" constant="10" id="628-uo-8wy"/>
+                                            <constraint firstAttribute="trailing" secondItem="iU9-Je-FKa" secondAttribute="trailing" constant="10" id="6g2-li-tHi"/>
+                                            <constraint firstItem="bOe-HS-3mQ" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="BLL-Uq-104"/>
+                                            <constraint firstItem="zKe-4u-NE8" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="Deh-8N-OEU"/>
+                                            <constraint firstItem="iU9-Je-FKa" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="IpO-3B-epj"/>
+                                            <constraint firstItem="zKe-4u-NE8" firstAttribute="top" secondItem="yYp-c8-FhH" secondAttribute="bottom" constant="15" id="LqC-JY-X5l"/>
                                             <constraint firstAttribute="height" constant="1000" id="MZO-mE-CGT"/>
+                                            <constraint firstItem="yYp-c8-FhH" firstAttribute="top" secondItem="Jdu-Z5-gWB" secondAttribute="bottom" constant="15" id="MsB-2X-QZx"/>
+                                            <constraint firstItem="yYp-c8-FhH" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="OhF-gC-ET8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jdu-Z5-gWB" secondAttribute="trailing" constant="10" id="U7d-Wi-79a"/>
+                                            <constraint firstAttribute="trailing" secondItem="bOe-HS-3mQ" secondAttribute="trailing" constant="10" id="VEz-sq-8Zn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mw5-ej-f8g" secondAttribute="trailing" constant="5" id="YSH-Vc-WZr"/>
+                                            <constraint firstItem="Mw5-ej-f8g" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="5" id="dcN-qa-yMA"/>
+                                            <constraint firstItem="Fde-5e-ejw" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="gl8-uz-B1E"/>
+                                            <constraint firstItem="Jdu-Z5-gWB" firstAttribute="leading" secondItem="shL-Xe-ec8" secondAttribute="leading" constant="10" id="nIW-Rs-hIk"/>
+                                            <constraint firstItem="Fde-5e-ejw" firstAttribute="top" secondItem="iU9-Je-FKa" secondAttribute="bottom" constant="10" id="nTz-Ij-Xpy"/>
+                                            <constraint firstItem="Mw5-ej-f8g" firstAttribute="top" secondItem="shL-Xe-ec8" secondAttribute="top" constant="10" id="q8l-NR-eCh"/>
+                                            <constraint firstItem="bOe-HS-3mQ" firstAttribute="top" secondItem="zKe-4u-NE8" secondAttribute="bottom" constant="15" id="wDG-jn-px5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -203,16 +274,20 @@
                     <navigationItem key="navigationItem" title="Auction" id="cVw-TT-XWO">
                         <barButtonItem key="leftBarButtonItem" springLoaded="YES" style="done" systemItem="cancel" id="pHx-BB-KzN">
                             <color key="tintColor" red="0.1019607843" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="uHe-m1-szV" kind="show" id="bKN-9V-Ub0"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="bidTextField" destination="zKe-4u-NE8" id="Tlf-Xx-Oyr"/>
+                        <outlet property="currentBidLabel" destination="Jdu-Z5-gWB" id="gJA-Oo-uy1"/>
+                        <outlet property="initialPriceLabel" destination="Fde-5e-ejw" id="gvE-Sy-zsb"/>
+                        <outlet property="productDescriptionLabel" destination="Mw5-ej-f8g" id="1el-XL-YxK"/>
+                        <outlet property="productImageView" destination="iU9-Je-FKa" id="ARP-zF-Ks6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHt-QL-he6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2040.8" y="-9.6059113300492616"/>
+            <point key="canvasLocation" x="3167" y="-49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MDS-Go-N3N">
@@ -232,26 +307,5 @@
             </objects>
             <point key="canvasLocation" x="1117.5999999999999" y="-752.21674876847294"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="f8G-xt-ZUs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mti-Kg-u2d" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qTh-Z4-MtC">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ic1-88-po0" kind="relationship" relationship="rootViewController" id="DuP-xN-J98"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBM-eN-4jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1081" y="-78"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="bKN-9V-Ub0"/>
-    </inferredMetricsTieBreakers>
 </document>

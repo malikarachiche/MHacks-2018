@@ -25,6 +25,8 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
     
+    var selectedProduct: Product!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,6 +106,11 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedProduct = productsArr[indexPath.row]
+        self.performSegue(withIdentifier: "auctionSegue", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSrc.count
     }
@@ -130,6 +137,11 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }, category: dataSrc[indexPath.row])
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AuctionVC
+        vc.product = selectedProduct
     }
 
    
