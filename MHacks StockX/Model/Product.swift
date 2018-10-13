@@ -12,13 +12,13 @@ class Product{
     var description: String?
     var currentBid: String?
     var image: String?
-   
+    var uuid: String?
     
-    init( description: String, currentBid: String, image: String) {
+    init( description: String, currentBid: String, image: String, uuid: String) {
         self.description = description
         self.currentBid  = currentBid
         self.image = image
-        
+        self.uuid = uuid
     }
     
 }
