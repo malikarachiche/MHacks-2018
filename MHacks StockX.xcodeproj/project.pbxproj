@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4542056B21718462009B69FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542056A21718462009B69FA /* AppDelegate.swift */; };
+		4542056D21718462009B69FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542056C21718462009B69FA /* ViewController.swift */; };
+		4542057021718462009B69FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4542056E21718462009B69FA /* Main.storyboard */; };
+		4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4542057121718462009B69FA /* MHacks_StockX.xcdatamodeld */; };
+		4542057521718465009B69FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4542057421718465009B69FA /* Assets.xcassets */; };
+		4542057821718465009B69FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4542057621718465009B69FA /* LaunchScreen.storyboard */; };
+		4542058321718465009B69FA /* MHacks_StockXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542058221718465009B69FA /* MHacks_StockXTests.swift */; };
+		4542058E21718465009B69FA /* MHacks_StockXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542058D21718465009B69FA /* MHacks_StockXUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4542057F21718465009B69FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4542055F21718462009B69FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4542056621718462009B69FA;
+			remoteInfo = "MHacks StockX";
+		};
+		4542058A21718465009B69FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4542055F21718462009B69FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4542056621718462009B69FA;
+			remoteInfo = "MHacks StockX";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4542056721718462009B69FA /* MHacks StockX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MHacks StockX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4542056A21718462009B69FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4542056C21718462009B69FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4542056F21718462009B69FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4542057221718462009B69FA /* MHacks_StockX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHacks_StockX.xcdatamodel; sourceTree = "<group>"; };
+		4542057421718465009B69FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4542057721718465009B69FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4542057921718465009B69FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4542057E21718465009B69FA /* MHacks StockXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MHacks StockXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4542058221718465009B69FA /* MHacks_StockXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHacks_StockXTests.swift; sourceTree = "<group>"; };
+		4542058421718465009B69FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4542058921718465009B69FA /* MHacks StockXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MHacks StockXUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4542058D21718465009B69FA /* MHacks_StockXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHacks_StockXUITests.swift; sourceTree = "<group>"; };
+		4542058F21718465009B69FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4542056421718462009B69FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542057B21718465009B69FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542058621718465009B69FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4542055E21718462009B69FA = {
+			isa = PBXGroup;
+			children = (
+				4542056921718462009B69FA /* MHacks StockX */,
+				4542058121718465009B69FA /* MHacks StockXTests */,
+				4542058C21718465009B69FA /* MHacks StockXUITests */,
+				4542056821718462009B69FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4542056821718462009B69FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4542056721718462009B69FA /* MHacks StockX.app */,
+				4542057E21718465009B69FA /* MHacks StockXTests.xctest */,
+				4542058921718465009B69FA /* MHacks StockXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4542056921718462009B69FA /* MHacks StockX */ = {
+			isa = PBXGroup;
+			children = (
+				4542056A21718462009B69FA /* AppDelegate.swift */,
+				4542056C21718462009B69FA /* ViewController.swift */,
+				4542056E21718462009B69FA /* Main.storyboard */,
+				4542057421718465009B69FA /* Assets.xcassets */,
+				4542057621718465009B69FA /* LaunchScreen.storyboard */,
+				4542057921718465009B69FA /* Info.plist */,
+				4542057121718462009B69FA /* MHacks_StockX.xcdatamodeld */,
+			);
+			path = "MHacks StockX";
+			sourceTree = "<group>";
+		};
+		4542058121718465009B69FA /* MHacks StockXTests */ = {
+			isa = PBXGroup;
+			children = (
+				4542058221718465009B69FA /* MHacks_StockXTests.swift */,
+				4542058421718465009B69FA /* Info.plist */,
+			);
+			path = "MHacks StockXTests";
+			sourceTree = "<group>";
+		};
+		4542058C21718465009B69FA /* MHacks StockXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4542058D21718465009B69FA /* MHacks_StockXUITests.swift */,
+				4542058F21718465009B69FA /* Info.plist */,
+			);
+			path = "MHacks StockXUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4542056621718462009B69FA /* MHacks StockX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4542059221718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockX" */;
+			buildPhases = (
+				4542056321718462009B69FA /* Sources */,
+				4542056421718462009B69FA /* Frameworks */,
+				4542056521718462009B69FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MHacks StockX";
+			productName = "MHacks StockX";
+			productReference = 4542056721718462009B69FA /* MHacks StockX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4542057D21718465009B69FA /* MHacks StockXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4542059521718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockXTests" */;
+			buildPhases = (
+				4542057A21718465009B69FA /* Sources */,
+				4542057B21718465009B69FA /* Frameworks */,
+				4542057C21718465009B69FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4542058021718465009B69FA /* PBXTargetDependency */,
+			);
+			name = "MHacks StockXTests";
+			productName = "MHacks StockXTests";
+			productReference = 4542057E21718465009B69FA /* MHacks StockXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4542058821718465009B69FA /* MHacks StockXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4542059821718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockXUITests" */;
+			buildPhases = (
+				4542058521718465009B69FA /* Sources */,
+				4542058621718465009B69FA /* Frameworks */,
+				4542058721718465009B69FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4542058B21718465009B69FA /* PBXTargetDependency */,
+			);
+			name = "MHacks StockXUITests";
+			productName = "MHacks StockXUITests";
+			productReference = 4542058921718465009B69FA /* MHacks StockXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4542055F21718462009B69FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Malik Arachiche";
+				TargetAttributes = {
+					4542056621718462009B69FA = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					4542057D21718465009B69FA = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 4542056621718462009B69FA;
+					};
+					4542058821718465009B69FA = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 4542056621718462009B69FA;
+					};
+				};
+			};
+			buildConfigurationList = 4542056221718462009B69FA /* Build configuration list for PBXProject "MHacks StockX" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4542055E21718462009B69FA;
+			productRefGroup = 4542056821718462009B69FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4542056621718462009B69FA /* MHacks StockX */,
+				4542057D21718465009B69FA /* MHacks StockXTests */,
+				4542058821718465009B69FA /* MHacks StockXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4542056521718462009B69FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4542057821718465009B69FA /* LaunchScreen.storyboard in Resources */,
+				4542057521718465009B69FA /* Assets.xcassets in Resources */,
+				4542057021718462009B69FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542057C21718465009B69FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542058721718465009B69FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4542056321718462009B69FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4542056D21718462009B69FA /* ViewController.swift in Sources */,
+				4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */,
+				4542056B21718462009B69FA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542057A21718465009B69FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4542058321718465009B69FA /* MHacks_StockXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4542058521718465009B69FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4542058E21718465009B69FA /* MHacks_StockXUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4542058021718465009B69FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4542056621718462009B69FA /* MHacks StockX */;
+			targetProxy = 4542057F21718465009B69FA /* PBXContainerItemProxy */;
+		};
+		4542058B21718465009B69FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4542056621718462009B69FA /* MHacks StockX */;
+			targetProxy = 4542058A21718465009B69FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4542056E21718462009B69FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4542056F21718462009B69FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4542057621718465009B69FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4542057721718465009B69FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4542059021718465009B69FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4542059121718465009B69FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4542059321718465009B69FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4542059421718465009B69FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4542059621718465009B69FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHacks StockX.app/MHacks StockX";
+			};
+			name = Debug;
+		};
+		4542059721718465009B69FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHacks StockX.app/MHacks StockX";
+			};
+			name = Release;
+		};
+		4542059921718465009B69FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockXUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MHacks StockX";
+			};
+			name = Debug;
+		};
+		4542059A21718465009B69FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				INFOPLIST_FILE = "MHacks StockXUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockXUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MHacks StockX";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4542056221718462009B69FA /* Build configuration list for PBXProject "MHacks StockX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4542059021718465009B69FA /* Debug */,
+				4542059121718465009B69FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4542059221718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4542059321718465009B69FA /* Debug */,
+				4542059421718465009B69FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4542059521718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4542059621718465009B69FA /* Debug */,
+				4542059721718465009B69FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4542059821718465009B69FA /* Build configuration list for PBXNativeTarget "MHacks StockXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4542059921718465009B69FA /* Debug */,
+				4542059A21718465009B69FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4542057121718462009B69FA /* MHacks_StockX.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4542057221718462009B69FA /* MHacks_StockX.xcdatamodel */,
+			);
+			currentVersion = 4542057221718462009B69FA /* MHacks_StockX.xcdatamodel */;
+			path = MHacks_StockX.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4542055F21718462009B69FA /* Project object */;
+}
