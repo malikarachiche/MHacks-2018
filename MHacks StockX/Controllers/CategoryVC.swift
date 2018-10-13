@@ -11,7 +11,7 @@ import UIKit
 class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var productsArr : [Product] = [Product(description: "YOOhfksdbkbkvskvbhskdhbvksdbvksdbvretgehrthyrththyfthfjhgfhcddhydththtdyhdhtjjtykjbvkjbvkjsbnkvjlndsnvlsOOO", currentBid: "300", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg"), Product(description: "BITTCH", currentBid: "200", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg")];
+    var productsArr : [Product] = [Product(description: "YOOhfksdbkbkvskvbhskdhbvksdbvksdbvretgehrthyrththyfthfjhgfhcddhydththtdyhdhtjjtykjbvkjbvkjsbnkvjlndsnvlsOOO", currentBid: "300", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg", uuid: ""), Product(description: "BITTCH", currentBid: "200", image: "https://cdn.motor1.com/images/mgl/qxZrL/s3/25-future-cars-worth-waiting-for.jpg", uuid: "")];
     
     override func viewDidLoad() {
         super.viewDidLoad()

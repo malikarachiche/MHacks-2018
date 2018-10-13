@@ -9,9 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+var product: [Product] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataService.instance.getTopProduct(completion: { (response) in
+           print(response!)
+                self.product = response!
+            
+        }, category: "sneakers")
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
