@@ -12,11 +12,12 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
 
     @IBOutlet weak var collectionView: UICollectionView!
     var productsArr : [Product] = []
-    var whichProd: String = ""
+    var whichProd: String = "sneakers"
+    var spinner: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addSpinner()
         DataService.instance.getTopProduct(completion: { (response) in
             print(response!)
             self.productsArr = response!
@@ -24,10 +25,25 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             self.collectionView.delegate = self
             self.collectionView.dataSource = self
             self.collectionView.reloadData()
-
+            self.removeSpinner()
         }, category: "\(whichProd)")
         
         // Do any additional setup after loading the view.
+    }
+    
+    func addSpinner(){
+        spinner = UIActivityIndicatorView()
+        spinner?.center = CGPoint(x: (UIScreen.main.bounds.width/2) - ((spinner?.frame.width)!/2), y: 150)
+        spinner?.style = .whiteLarge
+        spinner?.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        spinner?.startAnimating()
+        collectionView?.addSubview(spinner!)
+    }
+    
+    func removeSpinner(){
+        if(spinner != nil){
+            spinner?.removeFromSuperview()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -36,9 +52,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatVCCollectionCell", for: indexPath) as! CatVCCollectionCell
-//        cell.layer.borderColor = UIColor.black.cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 8
+
         cell.product = productsArr[indexPath.row]
         return cell
     }
