@@ -74,15 +74,60 @@ class DataService{
         
     }
 
-    func bid(product : Product, amount : String) {
+    func bid(product : Product, amount : String, completion: @escaping (Bool, String)->()) {
         let ID = SwiftyUUID.UUID()
         let idString = ID.CanonicalString()
+        print("biddd")
+        DB_BASE.child("Products").child(product.uuid!).child("HighestBid").observeSingleEvent(of: .value) { (snapshot) in
+            print("in biddd")
+            
+            //var amountRN2 = product.currentBid
+            guard let amountRN = snapshot.childSnapshot(forPath: "Amount").value as? String else{
+                
+               print(amount)
+                print(product.currentBid!)
+                if(Double(amount)! > Double(product.currentBid!)!){
+                    print("true 1")
+                    let time = Date().timeIntervalSince1970
+                    let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)] as [String : String]
+
+                    self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
+                    self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
+                    print("more")
+                    completion(true, String(time))
+                    
+                }else{
+                    print("false 1")
+                    completion(false,"")
+                    
+                }
+                return
+              
+            }
+            
+            
+            
+            
+            
+            if Double(amount)! < Double(amountRN)! {
+                print("false 2")
+                completion(false, "")
+                
+                return
+            }
+            
+            let time = Date().timeIntervalSince1970
+            let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)] as [String : String]
+            
+            self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
+            self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
+            print("true 2")
+            completion(true, String(time))
+            return
+            
+        }
        
-        let time = Date().timeIntervalSince1970
-        let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)] as [String : String]
         
-        REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
-        REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
     }
 
     func getHighestBidAmount(completion: @escaping (String)->(), product: Product){
