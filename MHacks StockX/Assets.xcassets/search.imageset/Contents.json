@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-search-30.png",
+      "filename" : "baseline_search_black_18dp.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-search-60.png",
+      "filename" : "baseline_search_black_18dp-1.png",
       "scale" : "2x"
     },
     {
