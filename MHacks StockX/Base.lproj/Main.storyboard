@@ -607,6 +607,7 @@
                     <navigationItem key="navigationItem" title="Auction" id="cVw-TT-XWO"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="bidBtn" destination="bOe-HS-3mQ" id="WWl-dV-LKV"/>
                         <outlet property="bidTextField" destination="zKe-4u-NE8" id="Tlf-Xx-Oyr"/>
                         <outlet property="currentBidLabel" destination="Jdu-Z5-gWB" id="gJA-Oo-uy1"/>
                         <outlet property="initialPriceLabel" destination="Fde-5e-ejw" id="gvE-Sy-zsb"/>

@@ -33,6 +33,7 @@ class AuctionVC: UIViewController {
     var firstAppearance: Date?
     
     
+    @IBOutlet weak var bidBtn: RoundedButton!
     
     let DB_BASE = Database.database().reference()
     
@@ -79,8 +80,14 @@ class AuctionVC: UIViewController {
             if(self.fdiff > 1 && self.fdiff <= 120){
                 self.progressBar.startProgress(to: 0, duration: 0, completion: {
                     self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+                        
+                       //  self.currentBidLabel.text = "0"
+                        self.dismiss(animated: true, completion: nil)
                         self.messageDisplay(message: "The auction is now over")
-                         self.currentBidLabel.text = "0"
+                        self.DB_BASE.child("Products").child(uuid).removeValue()
+                     //   self.initialPriceLabel.text = "This Item is auctioned!"
+                        self.bidBtn.isEnabled = false
+                        
                     })
                 })
 
@@ -198,14 +205,17 @@ class AuctionVC: UIViewController {
                 if(self.fdiff > 1 && self.fdiff<=120){
                     self.progressBar.startProgress(to: 0, duration: 0, completion: {
                         self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
-                            self.messageDisplay(message: "The auction is now over")
-                            self.currentBidLabel.text = "0"
+                            self.dismiss(animated: true, completion: nil)
+                            self.specMessage(message: "The auction is now over")
+                            
+                             self.DB_BASE.child("Products").child(uuid).removeValue()
                         })
                     })
                     
 
-                } else{
-                    self.DB_BASE.child("Products").child(uuid).removeValue()
+//                } else{
+//                    self.DB_BASE.child("Products").child(uuid).removeValue()
+//                }
                 }
             } else
             {
@@ -227,10 +237,26 @@ class AuctionVC: UIViewController {
     func messageDisplay(message: String){
         let alertController = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func handler(alert: UIAlertAction!){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func specMessage(message: String){
+        let alertController = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (aa) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+       
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     @IBAction func dismissController(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
