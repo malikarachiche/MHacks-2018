@@ -9,22 +9,28 @@
 import UIKit
 
 
-class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
+class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var searchTF: UITextField!
     
-
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     var productsArr : [Product] = []
+    var original: [Product] = []
     var whichProd: String = "sneakers"
     var spinner: UIActivityIndicatorView?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var Selectbtn: UIButton!
     
+  
     var dataSrc = ["Jordan", "Saucony", "Diadora", "Under Armour", "Off-White", "Fear of God", "Puma", "Nike", "Reebok", "Louis Vuitton", "Revenge X Storm", "Asics", "Vans", "adidas", "A Bathing Ape", "New Balance", "Converse" ]
     
+
     @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var TFHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var selectBrandHeightConstraint: NSLayoutConstraint!
     var selectedProduct: Product!
     
     override func viewDidLoad() {
@@ -32,13 +38,17 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
+        TFHeightConstraint.constant = 0
         tableViewConstraint.constant = 0
+        searchTF.delegate = self
+        searchTF.addTarget(self, action: #selector(goBtnPressed), for: .editingChanged)
+        
         
         addSpinner()
         DataService.instance.getTopProduct(completion: { (response) in
             
             self.productsArr = response!
-            
+            self.original = response!
             self.collectionView.delegate = self
             self.collectionView.dataSource = self
             self.collectionView.reloadData()
@@ -48,6 +58,31 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    
+    
+    @objc func goBtnPressed() {
+        addSpinner()
+        DataService.instance.getSearchResult(completion: { (prod) in
+            if(prod != nil){
+            if(self.searchTF.text! == "") {
+                
+                self.productsArr = self.original
+                self.collectionView.reloadData()
+                //self.removeSpinner()
+                
+            } else {
+            
+                self.productsArr = prod!
+                self.collectionView.reloadData()
+                
+                
+            }
+            }
+            
+           
+        }, searchQueryy: searchTF.text!)
+        self.removeSpinner()
+    }
     @IBAction func selectBtnPressed(_ sender: Any) {
         if( self.tableViewConstraint.constant == 0){
             animate(toggle: true)
@@ -56,6 +91,8 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             animate(toggle: false)
         }
     }
+    
+   
     
     func animate(toggle: Bool){
         if(toggle){
@@ -66,6 +103,17 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
             UIView.animate(withDuration: 0.3) {
                 self.tableViewConstraint.constant = 0
             }
+        }
+    }
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        if(selectBrandHeightConstraint.constant == 45){
+            selectBrandHeightConstraint.constant = 0
+            selectButton.isHidden = true
+            TFHeightConstraint.constant = 40
+        }else{
+            selectBrandHeightConstraint.constant = 45
+            selectButton.isHidden = false
+            TFHeightConstraint.constant = 0
         }
     }
     
