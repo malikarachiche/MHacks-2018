@@ -84,6 +84,24 @@ class DataService{
         REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
         REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
     }
+
+    func getHighestBidAmount(completion: @escaping (String)->(), product: Product){
+        DB_BASE.child("Products").child(product.uuid!).child("HighestBid").observe(.value) { (snapshot) in
+            
+            
+            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? Double else{
+                return
+            }
+            if(amount == 0.0){
+                completion("0")
+                //self.currentBidLabel.text = ""
+            } else {
+                completion(String(amount))
+               
+            }
+        }
+    }
+
 }
 
 
