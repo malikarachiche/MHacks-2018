@@ -159,29 +159,8 @@ class AuctionVC: UIViewController {
             }
             //self.dismiss(animated: true, completion: nil)
         }
-        
-        func alertcontrollerDisplay(message: String){
-            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-            }
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
-        
-        @IBAction func dismissController(_ sender: Any) {
-            self.dismiss(animated: true, completion: nil)
-        }
-        func downloadImage(from url: URL) {
-            print("Download Started")
-            getData(from: url) { data, response, error in
-                guard let data = data, error == nil else { return }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                DispatchQueue.main.async() {
-                    self.productImageView.image = UIImage(data: data)
-                }
-            }
-        }
+    }
+    
         
         func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
             URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
@@ -197,4 +176,4 @@ class AuctionVC: UIViewController {
          }
          */
         
-    }
+}
