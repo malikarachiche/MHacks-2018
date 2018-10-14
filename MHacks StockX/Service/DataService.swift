@@ -84,7 +84,7 @@ class DataService{
         REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
         REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
     }
-    
+
     func getHighestBidAmount(completion: @escaping (String)->(), product: Product){
         DB_BASE.child("Products").child(product.uuid!).child("HighestBid").observe(.value) { (snapshot) in
             
@@ -101,9 +101,7 @@ class DataService{
             }
         }
     }
-    
-    
-   
+
 }
 
 
