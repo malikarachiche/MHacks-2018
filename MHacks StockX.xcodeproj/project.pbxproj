@@ -19,6 +19,7 @@
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
 		D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8021734287008B2618 /* SWRevealViewController.m */; };
 		D5153D8321734C3F008B2618 /* SWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8221734C3F008B2618 /* SWViewController.swift */; };
+		D5153D8621736074008B2618 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8521736074008B2618 /* RoundedButton.swift */; };
 		D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BE92171B4ED0044BC65 /* DataService.swift */; };
 		D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */; };
 		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
@@ -72,6 +73,7 @@
 		D5153D7F21734287008B2618 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D5153D8021734287008B2618 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D5153D8221734C3F008B2618 /* SWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWViewController.swift; sourceTree = "<group>"; };
+		D5153D8521736074008B2618 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D57E7BE92171B4ED0044BC65 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCCollectionCell.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		4542056921718462009B69FA /* MHacks StockX */ = {
 			isa = PBXGroup;
 			children = (
+				D5153D8421736050008B2618 /* Views */,
 				D5153D7D21734262008B2618 /* SupportingFiles */,
 				D57E7BE82171B4CD0044BC65 /* Controllers */,
 				D57E7BE62171B4BA0044BC65 /* Service */,
@@ -203,6 +206,14 @@
 				D5153D7E21734286008B2618 /* MHacks StockX-Bridging-Header.h */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D5153D8421736050008B2618 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5153D8521736074008B2618 /* RoundedButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D57E7BE52171B4B10044BC65 /* Model */ = {
@@ -484,6 +495,7 @@
 				4542056B21718462009B69FA /* AppDelegate.swift in Sources */,
 				D57E7BFE21728BBC0044BC65 /* SignInandSignUpViewController.swift in Sources */,
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
+				D5153D8621736074008B2618 /* RoundedButton.swift in Sources */,
 				D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */,
 				D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */,
 				D57E7BF8217256460044BC65 /* Config.swift in Sources */,
