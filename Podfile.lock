@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - DropDown (2.3.9)
   - Firebase/Auth (4.8.2):
     - Firebase/Core
     - FirebaseAuth (= 4.4.2)
@@ -52,19 +53,23 @@ PODS:
   - nanopb/encode (0.3.8)
   - SwiftyJSON (4.0.0)
   - SwiftyUUID (1.1.0)
+  - UICircularProgressRing (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - DropDown (~> 2.3.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
   - SwiftyJSON (~> 4.0)
   - SwiftyUUID
+  - UICircularProgressRing
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DropDown
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -78,9 +83,11 @@ SPEC REPOS:
     - nanopb
     - SwiftyJSON
     - SwiftyUUID
+    - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  DropDown: d187d4abdfa708a2990aff0f4fcfab77c6b161df
   Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
@@ -94,7 +101,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUUID: 3cf8e9a58d5f32280766b8de9a0fd0a6e4040f68
+  UICircularProgressRing: 5a32c01f54474571b1e66e8fa050c0f83d6d981b
 
-PODFILE CHECKSUM: 7e617d4e3b9f1a161e55ce866a73a6b6f0a2f0dd
+PODFILE CHECKSUM: c0b843e2ca69a74daefa82275d0e5eb7b412192c
 
 COCOAPODS: 1.5.3

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4542056B21718462009B69FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542056A21718462009B69FA /* AppDelegate.swift */; };
-		4542056D21718462009B69FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542056C21718462009B69FA /* ViewController.swift */; };
 		4542057021718462009B69FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4542056E21718462009B69FA /* Main.storyboard */; };
 		4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4542057121718462009B69FA /* MHacks_StockX.xcdatamodeld */; };
 		4542057521718465009B69FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4542057421718465009B69FA /* Assets.xcassets */; };
@@ -18,7 +17,17 @@
 		64434B87FC9CA3803352F3BF /* Pods_MHacks_StockX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAA4EC0CD1A265AE8234EE4 /* Pods_MHacks_StockX.framework */; };
 		9E6A9CE1BA65C78946990885 /* Pods_MHacks_StockXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */; };
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
+		D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8021734287008B2618 /* SWRevealViewController.m */; };
+		D5153D8321734C3F008B2618 /* SWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8221734C3F008B2618 /* SWViewController.swift */; };
+		D5153D8621736074008B2618 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8521736074008B2618 /* RoundedButton.swift */; };
 		D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BE92171B4ED0044BC65 /* DataService.swift */; };
+		D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */; };
+		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
+		D57E7BF02171C0900044BC65 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEF2171C0900044BC65 /* Product.swift */; };
+		D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF1217238270044BC65 /* AuctionVC.swift */; };
+		D57E7BF8217256460044BC65 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF7217256460044BC65 /* Config.swift */; };
+		D57E7BFE21728BBC0044BC65 /* SignInandSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */; };
+		D57E7C022172B3D40044BC65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +51,6 @@
 		2FAA4EC0CD1A265AE8234EE4 /* Pods_MHacks_StockX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4542056721718462009B69FA /* MHacks StockX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MHacks StockX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4542056A21718462009B69FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4542056C21718462009B69FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4542056F21718462009B69FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4542057221718462009B69FA /* MHacks_StockX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHacks_StockX.xcdatamodel; sourceTree = "<group>"; };
 		4542057421718465009B69FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,8 +67,21 @@
 		924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929115E5EC02BB9147133B0B /* Pods-MHacks StockXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F589134881F021FE89B4C2A /* Pods-MHacks StockXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3B922BACE5FF87E8505CBEA /* Pods-MHacks StockX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.debug.xcconfig"; sourceTree = "<group>"; };
+		D5153D7E21734286008B2618 /* MHacks StockX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHacks StockX-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5153D7F21734287008B2618 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D5153D8021734287008B2618 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D5153D8221734C3F008B2618 /* SWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWViewController.swift; sourceTree = "<group>"; };
+		D5153D8521736074008B2618 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D57E7BE92171B4ED0044BC65 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCCollectionCell.swift; sourceTree = "<group>"; };
+		D57E7BEF2171C0900044BC65 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D57E7BF1217238270044BC65 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
+		D57E7BF7217256460044BC65 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInandSignUpViewController.swift; sourceTree = "<group>"; };
+		D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5C13403224C1D59042B726B /* Pods-MHacks StockX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.release.xcconfig"; sourceTree = "<group>"; };
 		FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,11 +139,16 @@
 		4542056921718462009B69FA /* MHacks StockX */ = {
 			isa = PBXGroup;
 			children = (
-				D57E7BE82171B4CD0044BC65 /* VC */,
+				D5153D8421736050008B2618 /* Views */,
+				D5153D7D21734262008B2618 /* SupportingFiles */,
+				D57E7BE82171B4CD0044BC65 /* Controllers */,
 				D57E7BE62171B4BA0044BC65 /* Service */,
 				D57E7BE52171B4B10044BC65 /* Model */,
 				4542056A21718462009B69FA /* AppDelegate.swift */,
+				D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */,
 				4542056E21718462009B69FA /* Main.storyboard */,
+				D5153D8221734C3F008B2618 /* SWViewController.swift */,
+				C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */,
 				4542057421718465009B69FA /* Assets.xcassets */,
 				4542057621718465009B69FA /* LaunchScreen.storyboard */,
 				4542057921718465009B69FA /* Info.plist */,
@@ -172,9 +198,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D5153D7D21734262008B2618 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D5153D7F21734287008B2618 /* SWRevealViewController.h */,
+				D5153D8021734287008B2618 /* SWRevealViewController.m */,
+				D5153D7E21734286008B2618 /* MHacks StockX-Bridging-Header.h */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		D5153D8421736050008B2618 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5153D8521736074008B2618 /* RoundedButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D57E7BE52171B4B10044BC65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
+				D57E7BEF2171C0900044BC65 /* Product.swift */,
+				D57E7BF7217256460044BC65 /* Config.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,12 +234,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		D57E7BE82171B4CD0044BC65 /* VC */ = {
+		D57E7BE82171B4CD0044BC65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4542056C21718462009B69FA /* ViewController.swift */,
+				D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */,
+				D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */,
+				D57E7BF1217238270044BC65 /* AuctionVC.swift */,
 			);
-			path = VC;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +316,7 @@
 				TargetAttributes = {
 					4542056621718462009B69FA = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					4542057D21718465009B69FA = {
 						CreatedOnToolsVersion = 10.0;
@@ -304,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4542057821718465009B69FA /* LaunchScreen.storyboard in Resources */,
+				D57E7C022172B3D40044BC65 /* GoogleService-Info.plist in Resources */,
 				4542057521718465009B69FA /* Assets.xcassets in Resources */,
 				4542057021718462009B69FA /* Main.storyboard in Resources */,
 			);
@@ -380,10 +431,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUUID/SwiftyUUID.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -392,10 +445,12 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUUID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -433,10 +488,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4542056D21718462009B69FA /* ViewController.swift in Sources */,
+				D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */,
 				4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */,
+				D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */,
+				D5153D8321734C3F008B2618 /* SWViewController.swift in Sources */,
 				4542056B21718462009B69FA /* AppDelegate.swift in Sources */,
+				D57E7BFE21728BBC0044BC65 /* SignInandSignUpViewController.swift in Sources */,
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
+				D5153D8621736074008B2618 /* RoundedButton.swift in Sources */,
+				D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */,
+				D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */,
+				D57E7BF8217256460044BC65 /* Config.swift in Sources */,
+				D57E7BF02171C0900044BC65 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,8 +675,9 @@
 			baseConfigurationReference = D3B922BACE5FF87E8505CBEA /* Pods-MHacks StockX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				DEVELOPMENT_TEAM = UES3CL6253;
 				INFOPLIST_FILE = "MHacks StockX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,6 +685,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MHacks StockX/SupportingFiles/MHacks StockX-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -631,8 +697,9 @@
 			baseConfigurationReference = F5C13403224C1D59042B726B /* Pods-MHacks StockX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ2SY9L2LM;
+				DEVELOPMENT_TEAM = UES3CL6253;
 				INFOPLIST_FILE = "MHacks StockX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,6 +707,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MalikArachiche.MHacks-StockX";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MHacks StockX/SupportingFiles/MHacks StockX-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
