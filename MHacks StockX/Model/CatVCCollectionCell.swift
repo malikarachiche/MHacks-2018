@@ -21,7 +21,7 @@ class CatVCCollectionCell: UICollectionViewCell {
             descriptionLabel.text = product.description!
             
             
-            currentbidLabel.text = product.currentBid!
+            currentbidLabel.text = "$\(product.currentBid!)"
             
             
             downloadImage(from: URL(string: product.image!)!)

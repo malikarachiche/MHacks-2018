@@ -17,6 +17,8 @@
 		64434B87FC9CA3803352F3BF /* Pods_MHacks_StockX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAA4EC0CD1A265AE8234EE4 /* Pods_MHacks_StockX.framework */; };
 		9E6A9CE1BA65C78946990885 /* Pods_MHacks_StockXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */; };
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
+		C72F842D2173659E0024C4A3 /* UserTBCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F842C2173659E0024C4A3 /* UserTBCellModel.swift */; };
+		C72F842F217368800024C4A3 /* UserBidsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F842E217368800024C4A3 /* UserBidsTableViewCell.swift */; };
 		D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8021734287008B2618 /* SWRevealViewController.m */; };
 		D5153D8321734C3F008B2618 /* SWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8221734C3F008B2618 /* SWViewController.swift */; };
 		D5153D8621736074008B2618 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5153D8521736074008B2618 /* RoundedButton.swift */; };
@@ -68,6 +70,8 @@
 		929115E5EC02BB9147133B0B /* Pods-MHacks StockXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F589134881F021FE89B4C2A /* Pods-MHacks StockXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C72F842C2173659E0024C4A3 /* UserTBCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTBCellModel.swift; sourceTree = "<group>"; };
+		C72F842E217368800024C4A3 /* UserBidsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBidsTableViewCell.swift; sourceTree = "<group>"; };
 		D3B922BACE5FF87E8505CBEA /* Pods-MHacks StockX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.debug.xcconfig"; sourceTree = "<group>"; };
 		D5153D7E21734286008B2618 /* MHacks StockX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHacks StockX-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5153D7F21734287008B2618 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -147,7 +151,7 @@
 				4542056A21718462009B69FA /* AppDelegate.swift */,
 				D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */,
 				4542056E21718462009B69FA /* Main.storyboard */,
-				D5153D8221734C3F008B2618 /* SWViewController.swift */,
+				C72F842E217368800024C4A3 /* UserBidsTableViewCell.swift */,
 				C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */,
 				4542057421718465009B69FA /* Assets.xcassets */,
 				4542057621718465009B69FA /* LaunchScreen.storyboard */,
@@ -222,6 +226,7 @@
 				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
 				D57E7BEF2171C0900044BC65 /* Product.swift */,
 				D57E7BF7217256460044BC65 /* Config.swift */,
+				C72F842C2173659E0024C4A3 /* UserTBCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 		D57E7BE82171B4CD0044BC65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D5153D8221734C3F008B2618 /* SWViewController.swift */,
 				D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */,
 				D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */,
 				D57E7BF1217238270044BC65 /* AuctionVC.swift */,
@@ -497,8 +503,10 @@
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
 				D5153D8621736074008B2618 /* RoundedButton.swift in Sources */,
 				D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */,
+				C72F842D2173659E0024C4A3 /* UserTBCellModel.swift in Sources */,
 				D5153D8121734287008B2618 /* SWRevealViewController.m in Sources */,
 				D57E7BF8217256460044BC65 /* Config.swift in Sources */,
+				C72F842F217368800024C4A3 /* UserBidsTableViewCell.swift in Sources */,
 				D57E7BF02171C0900044BC65 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

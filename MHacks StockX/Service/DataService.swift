@@ -127,6 +127,26 @@ class DataService{
         }
         
     }
+    
+    func getMyBids(completion: @escaping ([UserTBCellModel])->()) {
+        
+        DB_BASE.child("Users").child((Auth.auth().currentUser?.uid)!).observe(.value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects  as? [DataSnapshot] else { return }
+            print("The shit:")
+            print(snapshot)
+            var arr : [UserTBCellModel] = []
+            for snap in snapshot{
+                guard let innerSnapshot = snap.childSnapshot(forPath: "name").value as? String else{ return }
+                guard let innerSnapshot2 = snap.childSnapshot(forPath: "amount").value as? String else{ return }
+                guard let innerSnapshot3 = snap.childSnapshot(forPath: "uuid").value as? String else{ return }
+                guard let innerSnapshot4 = snap.childSnapshot(forPath: "imageUrl").value as? String else{ return }
+                let u = UserTBCellModel(name: innerSnapshot, uid: innerSnapshot3, imageUrl: innerSnapshot4, amount: "$\(innerSnapshot2)")
+                arr.append(u)
+            }
+            print(arr)
+            completion(arr)
+        }
+    }
 
     func bid(product : Product, amount : String, completion: @escaping (Bool, String)->()) {
         let ID = SwiftyUUID.UUID()
@@ -147,6 +167,11 @@ class DataService{
 
                     self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
                     self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
+                    
+                    let ID = SwiftyUUID.UUID()
+                    let idString = ID.CanonicalString()
+                    let values2 = ["name" : product.description!, "amount" : amount, "uuid" : product.uuid!, "imageUrl" : product.image!] as [String : String]
+                    self.REF_BASE.child("Users").child((Auth.auth().currentUser?.uid)!).child(idString).setValue(values2)
 
                     completion(true, String(time))
                     
@@ -171,6 +196,8 @@ class DataService{
             
             self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
             self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
+            let values2 = ["name" : product.description!, "amount" : amount, "uuid" : product.uuid!, "imageUrl" : product.image!] as [String : String]
+            self.REF_BASE.child("Users").child((Auth.auth().currentUser?.uid)!).child(idString).setValue(values2)
 
             completion(true, String(time))
             return
