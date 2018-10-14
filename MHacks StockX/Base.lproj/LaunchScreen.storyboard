@@ -16,13 +16,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.24118417501449585" green="0.7349762121836344" blue="0.3208426833152771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CLe-l1-pm7">
+                                <rect key="frame" x="112.5" y="268.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PXN-TW-VHi"/>
+                                    <constraint firstAttribute="height" constant="150" id="ctb-ry-gnB"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.36862745098039218" green="0.6705882352941176" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CLe-l1-pm7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PgZ-qH-c7w"/>
+                            <constraint firstItem="CLe-l1-pm7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Syw-CT-OaT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="400" height="400"/>
+    </resources>
 </document>
