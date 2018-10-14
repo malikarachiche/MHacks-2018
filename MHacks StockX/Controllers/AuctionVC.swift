@@ -103,6 +103,53 @@ class AuctionVC: UIViewController {
         currentBidLabel.text = "0"
         self.downloadImage(from: URL(string: self.product.image!)!)
         
+        guard let uuid = product.uuid else {
+            return
+        }
+        
+        self.DB_BASE.child("Products").child(uuid).child("HighestBid").observe(.childChanged) { (snapshot) in
+            self.DB_BASE.child("Products").child(uuid).child("HighestBid").observeSingleEvent(of: .value) { (snapshot) in
+
+                guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
+                    return
+                }
+
+                guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
+                    return
+                }
+                
+                if(amount != nil || amount != "") {
+                    self.currentBidLabel.text = "\(amount)"
+                } else {
+                    self.currentBidLabel.text = "0"
+                }
+
+                let myFloat = (time as NSString).doubleValue
+                let diff = Date().timeIntervalSince1970 - myFloat
+                print(diff)
+                self.fdiff = 120 - diff
+
+
+
+                if(self.fdiff > 1 && self.fdiff <= 120){
+                    self.progressBar.aniDuration = Int(self.fdiff)
+                    self.progressBar.labelSize = 60
+                    self.progressBar.safePercent = Int(self.fdiff)
+                    self.progressBar.setProgress(to: 1, withAnimation: true)
+                }
+                else{
+                    self.DB_BASE.child("Products").child(uuid).removeValue()
+
+                }
+
+            
+                
+                
+            }
+        }
+        
+        
+        
         DataService.instance.getHighestBidAmount(completion: { (amountString) in
             self.currentBidLabel.text = "$\(amountString)"
             
