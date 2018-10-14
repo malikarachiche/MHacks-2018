@@ -13,6 +13,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     @IBOutlet weak var searchTF: UITextField!
     
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     var productsArr : [Product] = []
@@ -38,6 +39,13 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        menuButton.addTarget(self.revealViewController(), action:#selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
+        self.view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        self.view.addGestureRecognizer((self.revealViewController()?.tapGestureRecognizer())!)
+        
+        
+        
         TFHeightConstraint.constant = 0
         tableViewConstraint.constant = 0
         searchTF.delegate = self
