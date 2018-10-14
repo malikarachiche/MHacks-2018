@@ -531,7 +531,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fFz-ex-pbN">
                                                 <rect key="frame" x="87" y="425" width="211" height="42"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The current bid is: $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqd-i8-L1t">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The current bid is: $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uqd-i8-L1t">
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="EVx-ah-Tl0"/>
@@ -540,7 +540,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdu-Z5-gWB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="230" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Jdu-Z5-gWB">
                                                         <rect key="frame" x="161" y="0.0" width="50" height="42"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="eTd-bY-xN4"/>
@@ -607,6 +607,7 @@
                     <navigationItem key="navigationItem" title="Auction" id="cVw-TT-XWO"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="bidBtn" destination="bOe-HS-3mQ" id="WWl-dV-LKV"/>
                         <outlet property="bidTextField" destination="zKe-4u-NE8" id="Tlf-Xx-Oyr"/>
                         <outlet property="currentBidLabel" destination="Jdu-Z5-gWB" id="gJA-Oo-uy1"/>
                         <outlet property="initialPriceLabel" destination="Fde-5e-ejw" id="gvE-Sy-zsb"/>
