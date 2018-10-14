@@ -17,6 +17,7 @@
 		64434B87FC9CA3803352F3BF /* Pods_MHacks_StockX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAA4EC0CD1A265AE8234EE4 /* Pods_MHacks_StockX.framework */; };
 		9E6A9CE1BA65C78946990885 /* Pods_MHacks_StockXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */; };
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
+		C7A7AF4421734F2E0096CECB /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A7AF4321734F2E0096CECB /* RoundedButton.swift */; };
 		D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BE92171B4ED0044BC65 /* DataService.swift */; };
 		D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */; };
 		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
@@ -65,6 +66,7 @@
 		929115E5EC02BB9147133B0B /* Pods-MHacks StockXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F589134881F021FE89B4C2A /* Pods-MHacks StockXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockXTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockXTests/Pods-MHacks StockXTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7A7AF4321734F2E0096CECB /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D3B922BACE5FF87E8505CBEA /* Pods-MHacks StockX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.debug.xcconfig"; sourceTree = "<group>"; };
 		D57E7BE92171B4ED0044BC65 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		4542056921718462009B69FA /* MHacks StockX */ = {
 			isa = PBXGroup;
 			children = (
+				C7A7AF4221734EFF0096CECB /* View */,
 				D57E7BE82171B4CD0044BC65 /* Controllers */,
 				D57E7BE62171B4BA0044BC65 /* Service */,
 				D57E7BE52171B4B10044BC65 /* Model */,
@@ -185,6 +188,14 @@
 				4FB17ED2564426F7805E5D87 /* Pods-MHacks StockXUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C7A7AF4221734EFF0096CECB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7A7AF4321734F2E0096CECB /* RoundedButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D57E7BE52171B4B10044BC65 /* Model */ = {
@@ -459,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */,
+				C7A7AF4421734F2E0096CECB /* RoundedButton.swift in Sources */,
 				4542057321718462009B69FA /* MHacks_StockX.xcdatamodeld in Sources */,
 				D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */,
 				4542056B21718462009B69FA /* AppDelegate.swift in Sources */,
