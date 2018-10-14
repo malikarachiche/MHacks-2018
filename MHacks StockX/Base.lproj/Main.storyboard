@@ -239,7 +239,7 @@
                         <outlet property="selectButton" destination="t7U-CA-2dO" id="1mf-PZ-l1l"/>
                         <outlet property="tableView" destination="MQt-sC-eyu" id="ljK-30-Rdr"/>
                         <outlet property="tableViewConstraint" destination="0sw-8c-8RD" id="oM8-4o-Jbw"/>
-                        <segue destination="ic1-88-po0" kind="presentation" identifier="auctionSegue" id="Dgp-mk-L1Q"/>
+                        <segue destination="ic1-88-po0" kind="show" identifier="auctionSegue" id="Dgp-mk-L1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOU-QS-Vwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +277,7 @@
                                                     <constraint firstAttribute="height" constant="250" id="tit-7V-H3W"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Jordan One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-ej-f8g">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Jordan One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Mw5-ej-f8g">
                                                 <rect key="frame" x="3" y="3" width="369" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="CGe-CZ-i7i"/>
@@ -323,7 +323,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-HS-3mQ">
                                                 <rect key="frame" x="10" y="766" width="355" height="52"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.49804407358169556" green="0.49803286790847778" blue="0.49803507328033447" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                                 <state key="normal" title="BID">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

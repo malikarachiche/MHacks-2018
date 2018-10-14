@@ -48,29 +48,34 @@ class AuctionVC: UIViewController {
             return
         }
         self.DB_BASE.child("Products").child(uuid).child("Bids").observe(.childAdded) { (snapshot) in
-            
-            
+
+           // self.messageDisplay(message: "A new bid of $\(self.DB_BASE.child("Products").child(uuid).child("HighestBid").value(forKey: "Amount") as! String) has been set")
+
+
             guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
                 return
             }
-            
+
             guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
                 return
             }
             
+            
+
             if(amount != nil || amount != "") {
                 self.currentBidLabel.text = "\(amount)"
+                self.messageDisplay(message: "A new bid of $\(amount) has been set")
             } else {
                 self.currentBidLabel.text = "0"
             }
-            
+
             let myFloat = (time as NSString).doubleValue
             let diff = Date().timeIntervalSince1970 - myFloat
             //print(diff)
             self.fdiff = 120 - diff
-            
-            
-            
+
+
+
             if(self.fdiff > 1 && self.fdiff <= 120){
                 self.progressBar.startProgress(to: 0, duration: 0, completion: {
                     self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
@@ -78,18 +83,22 @@ class AuctionVC: UIViewController {
                          self.currentBidLabel.text = "0"
                     })
                 })
-                
+
             }
             else{
                 self.DB_BASE.child("Products").child(uuid).removeValue()
-                
+
             }
-            
-            
-            
-            
-            
+
+
+
+
+
         }
+        
+       
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -176,7 +185,7 @@ class AuctionVC: UIViewController {
         //print(currentBidLabel.text!)
         DataService.instance.bid(product: product, amount: bidTextField.text!) { (success, tempTime) in
             if(success) {
-                self.messageDisplay(message: "A new bid of $\(self.bidTextField.text!) has been set")
+               // self.messageDisplay(message: "A new bid of $\(self.bidTextField.text!) has been set")
                 self.currentBidLabel.text = self.bidTextField.text!
 
                 
