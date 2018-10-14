@@ -14,6 +14,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import SwiftyUUID
 import Firebase
+import UICircularProgressRing
 
 class AuctionVC: UIViewController {
     
@@ -23,8 +24,7 @@ class AuctionVC: UIViewController {
     
     @IBOutlet weak var initialPriceLabel: UILabel!
     
-    
-    @IBOutlet weak var progressBar: CircularProgressBar!
+    @IBOutlet weak var progressBar: UICircularProgressRing!
     
     @IBOutlet weak var currentBidLabel: UILabel!
     
@@ -72,10 +72,13 @@ class AuctionVC: UIViewController {
             
             
             if(self.fdiff > 1 && self.fdiff <= 120){
-                self.progressBar.aniDuration = Int(self.fdiff)
-                self.progressBar.labelSize = 60
-                self.progressBar.safePercent = Int(self.fdiff)
-                self.progressBar.setProgress(to: 1, withAnimation: true)
+                self.progressBar.startProgress(to: 0, duration: 0, completion: {
+                    self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+                        self.messageDisplay(message: "The auction is now over")
+                         self.currentBidLabel.text = "0"
+                    })
+                })
+                
             }
             else{
                 self.DB_BASE.child("Products").child(uuid).removeValue()
@@ -119,14 +122,13 @@ class AuctionVC: UIViewController {
             let diff = Date().timeIntervalSince1970 - myFloat
             print(diff)
             self.fdiff = 120 - diff
-
-
+            
+            
 
             if(self.fdiff > 1 && self.fdiff <= 120){
-                self.progressBar.aniDuration = Int(self.fdiff)
-                self.progressBar.labelSize = 60
-                self.progressBar.safePercent = Int(self.fdiff)
-                self.progressBar.setProgress(to: 1, withAnimation: true)
+               // self.progressBar.startProgress(to: 0, duration: 0)
+                self.progressBar.startProgress(to: 100, duration: self.fdiff)
+
             }
             else{
                 self.DB_BASE.child("Products").child(uuid).removeValue()
@@ -160,8 +162,9 @@ class AuctionVC: UIViewController {
         }, product: product)
         
         
-        // Do any additional setup after loading the .
+        
     }
+    
     
     
     
@@ -173,17 +176,23 @@ class AuctionVC: UIViewController {
         print(currentBidLabel.text!)
         DataService.instance.bid(product: product, amount: bidTextField.text!) { (success, tempTime) in
             if(success) {
+                self.messageDisplay(message: "A new bid of $\(self.bidTextField.text!) has been set")
                 self.currentBidLabel.text = self.bidTextField.text!
+                
                 print("You on the right track")
                 let myFloat = (tempTime as NSString).doubleValue
                 let diff = Date().timeIntervalSince1970 - myFloat
                 
                 self.fdiff = 120 - diff
                 if(self.fdiff > 1 && self.fdiff<=120){
-                    self.progressBar.aniDuration = Int(self.fdiff)
-                    self.progressBar.labelSize = 60
-                    self.progressBar.safePercent = Int(self.fdiff)
-                    self.progressBar.setProgress(to: 1, withAnimation: true)
+                    self.progressBar.startProgress(to: 0, duration: 0, completion: {
+                        self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+                            self.messageDisplay(message: "The auction is now over")
+                            self.currentBidLabel.text = "0"
+                        })
+                    })
+                    
+
                 } else{
                     self.DB_BASE.child("Products").child(uuid).removeValue()
                 }
@@ -204,6 +213,14 @@ class AuctionVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func messageDisplay(message: String){
+        let alertController = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func dismissController(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -217,7 +234,7 @@ class AuctionVC: UIViewController {
             DispatchQueue.main.async() {
                 self.productImageView.image = UIImage(data: data)
             }
-            //self.dismiss(animated: true, completion: nil)
+            
         }
     }
     
@@ -226,14 +243,6 @@ class AuctionVC: UIViewController {
             URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
         }
         
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
+    
         
 }

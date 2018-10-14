@@ -53,6 +53,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - SwiftyJSON (4.0.0)
   - SwiftyUUID (1.1.0)
+  - UICircularProgressRing (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -63,6 +64,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - SwiftyJSON (~> 4.0)
   - SwiftyUUID
+  - UICircularProgressRing
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -81,6 +83,7 @@ SPEC REPOS:
     - nanopb
     - SwiftyJSON
     - SwiftyUUID
+    - UICircularProgressRing
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -98,7 +101,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUUID: 3cf8e9a58d5f32280766b8de9a0fd0a6e4040f68
+  UICircularProgressRing: 5a32c01f54474571b1e66e8fa050c0f83d6d981b
 
-PODFILE CHECKSUM: d376f31b668a9347544b42b2a400df0056d96da6
+PODFILE CHECKSUM: c0b843e2ca69a74daefa82275d0e5eb7b412192c
 
 COCOAPODS: 1.5.3

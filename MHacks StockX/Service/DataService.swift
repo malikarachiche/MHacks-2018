@@ -77,27 +77,27 @@ class DataService{
     func bid(product : Product, amount : String, completion: @escaping (Bool, String)->()) {
         let ID = SwiftyUUID.UUID()
         let idString = ID.CanonicalString()
-        print("biddd")
+        //print("biddd")
         DB_BASE.child("Products").child(product.uuid!).child("HighestBid").observeSingleEvent(of: .value) { (snapshot) in
-            print("in biddd")
+            //print("in biddd")
             
             //var amountRN2 = product.currentBid
             guard let amountRN = snapshot.childSnapshot(forPath: "Amount").value as? String else{
                 
                print(amount)
                 print(product.currentBid!)
-                if(Double(amount)! > Double(product.currentBid!)!){
-                    print("true 1")
+                if(Double(amount)! >= Double(product.currentBid!)!){
+                    //print("true 1")
                     let time = Date().timeIntervalSince1970
                     let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)] as [String : String]
 
                     self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
                     self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
-                    print("more")
+                    //print("more")
                     completion(true, String(time))
                     
                 }else{
-                    print("false 1")
+                    //print("false 1")
                     completion(false,"")
                     
                 }
@@ -105,12 +105,8 @@ class DataService{
               
             }
             
-            
-            
-            
-            
-            if Double(amount)! < Double(amountRN)! {
-                print("false 2")
+            if Double(amount)! <= Double(amountRN)! {
+                //print("false 2")
                 completion(false, "")
                 
                 return
@@ -121,7 +117,7 @@ class DataService{
             
             self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
             self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
-            print("true 2")
+            //print("true 2")
             completion(true, String(time))
             return
             
