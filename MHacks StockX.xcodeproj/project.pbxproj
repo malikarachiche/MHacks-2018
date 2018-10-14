@@ -17,18 +17,14 @@
 		64434B87FC9CA3803352F3BF /* Pods_MHacks_StockX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAA4EC0CD1A265AE8234EE4 /* Pods_MHacks_StockX.framework */; };
 		9E6A9CE1BA65C78946990885 /* Pods_MHacks_StockXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924AEA8F9E677412DA8544E2 /* Pods_MHacks_StockXUITests.framework */; };
 		9FBCBF071130CB4BD8FFE264 /* Pods_MHacks_StockXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */; };
-		C702AD922172B41900A6A2A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */; };
 		D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BE92171B4ED0044BC65 /* DataService.swift */; };
 		D57E7BEC2171BE4A0044BC65 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEB2171BE4A0044BC65 /* CategoryVC.swift */; };
 		D57E7BEE2171BF1F0044BC65 /* CatVCCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */; };
 		D57E7BF02171C0900044BC65 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BEF2171C0900044BC65 /* Product.swift */; };
 		D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF1217238270044BC65 /* AuctionVC.swift */; };
-		D57E7BF621724CC90044BC65 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */; };
 		D57E7BF8217256460044BC65 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BF7217256460044BC65 /* Config.swift */; };
 		D57E7BFE21728BBC0044BC65 /* SignInandSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */; };
-
 		D57E7C022172B3D40044BC65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,11 +71,9 @@
 		D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCCollectionCell.swift; sourceTree = "<group>"; };
 		D57E7BEF2171C0900044BC65 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D57E7BF1217238270044BC65 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
-		D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		D57E7BF7217256460044BC65 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D57E7BFD21728BBC0044BC65 /* SignInandSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInandSignUpViewController.swift; sourceTree = "<group>"; };
 		D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-
 		F5C13403224C1D59042B726B /* Pods-MHacks StockX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHacks StockX.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHacks StockX/Pods-MHacks StockX.release.xcconfig"; sourceTree = "<group>"; };
 		FA81B6DD8B2C3292EDDD4F99 /* Pods_MHacks_StockXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MHacks_StockXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -198,7 +192,6 @@
 			children = (
 				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
 				D57E7BEF2171C0900044BC65 /* Product.swift */,
-				D57E7BF521724CC90044BC65 /* CircularProgressBar.swift */,
 				D57E7BF7217256460044BC65 /* Config.swift */,
 			);
 			path = Model;
@@ -331,9 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4542057821718465009B69FA /* LaunchScreen.storyboard in Resources */,
-
 				D57E7C022172B3D40044BC65 /* GoogleService-Info.plist in Resources */,
-
 				4542057521718465009B69FA /* Assets.xcassets in Resources */,
 				4542057021718462009B69FA /* Main.storyboard in Resources */,
 			);
@@ -415,6 +406,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUUID/SwiftyUUID.framework",
+				"${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -428,6 +420,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUUID.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICircularProgressRing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -473,7 +466,6 @@
 				D57E7BEA2171B4ED0044BC65 /* DataService.swift in Sources */,
 				D57E7BF2217238270044BC65 /* AuctionVC.swift in Sources */,
 				D57E7BF8217256460044BC65 /* Config.swift in Sources */,
-				D57E7BF621724CC90044BC65 /* CircularProgressBar.swift in Sources */,
 				D57E7BF02171C0900044BC65 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

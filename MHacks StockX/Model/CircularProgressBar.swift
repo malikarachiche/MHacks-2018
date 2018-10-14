@@ -15,6 +15,8 @@ class CircularProgressBar: UIView {
     
     var aniDuration = 2
     
+    static var didAdd = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -71,9 +73,17 @@ class CircularProgressBar: UIView {
         
         var currentTime:Double = 0
         let timer = Timer.scheduledTimer(withTimeInterval: Double(aniDuration)*0.025, repeats: true) { (timer) in
+            
             if currentTime >= 2{
                 timer.invalidate()
             } else {
+                if(CircularProgressBar.didAdd){
+                    print("Here!")
+                    currentTime = 0;
+                    timer.invalidate()
+                    CircularProgressBar.didAdd=false
+                }
+                //print("The current time : \(currentTime)")
                 currentTime += 0.05
                 let percent = currentTime/2 * 100
                 self.label.text = "\(Int(progress * percent))"
@@ -81,6 +91,7 @@ class CircularProgressBar: UIView {
                 self.configLabel()
             }
         }
+        
         timer.fire()
         
     }

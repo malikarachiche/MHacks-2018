@@ -131,40 +131,36 @@ class DataService{
     func bid(product : Product, amount : String, completion: @escaping (Bool, String)->()) {
         let ID = SwiftyUUID.UUID()
         let idString = ID.CanonicalString()
+
         
         DB_BASE.child("Products").child(product.uuid!).child("HighestBid").observeSingleEvent(of: .value) { (snapshot) in
             
-            
             //var amountRN2 = product.currentBid
             guard let amountRN = snapshot.childSnapshot(forPath: "Amount").value as? String else{
-                
-               
-               
-                if(Double(amount)! > Double(product.currentBid!)!){
-                    
+           
+               print(amount)
+                print(product.currentBid!)
+                if(Double(amount)! >= Double(product.currentBid!)!){
+                    //print("true 1")
                     let time = Date().timeIntervalSince1970
                     let values = ["Puid" : (Auth.auth().currentUser?.uid)!, "Amount" : amount, "Time" : String(time)] as [String : String]
 
                     self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
                     self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
-                    
+
                     completion(true, String(time))
                     
                 }else{
-                    
+
                     completion(false,"")
                     
                 }
                 return
               
             }
-            
-            
-            
-            
-            
-            if Double(amount)! < Double(amountRN)! {
-                
+
+            if Double(amount)! <= Double(amountRN)! {
+
                 completion(false, "")
                 
                 return
@@ -175,7 +171,7 @@ class DataService{
             
             self.REF_BASE.child("Products").child(product.uuid!).child("HighestBid").setValue(values)
             self.REF_BASE.child("Products").child(product.uuid!).child("Bids").child(idString).setValue(values)
-            
+
             completion(true, String(time))
             return
             
