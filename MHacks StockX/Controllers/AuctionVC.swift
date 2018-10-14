@@ -44,7 +44,7 @@ class AuctionVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         guard let uuid = product.uuid else {
-            print("vfvgdf")
+            //print("vfvgdf")
             return
         }
         self.DB_BASE.child("Products").child(uuid).child("Bids").observe(.childAdded) { (snapshot) in
@@ -66,7 +66,7 @@ class AuctionVC: UIViewController {
             
             let myFloat = (time as NSString).doubleValue
             let diff = Date().timeIntervalSince1970 - myFloat
-            print(diff)
+            //print(diff)
             self.fdiff = 120 - diff
             
             
@@ -95,7 +95,7 @@ class AuctionVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         guard let uuid = product.uuid else {
-            print("vfvgdf")
+           // print("vfvgdf")
             return
         }
         
@@ -120,7 +120,7 @@ class AuctionVC: UIViewController {
 
             let myFloat = (time as NSString).doubleValue
             let diff = Date().timeIntervalSince1970 - myFloat
-            print(diff)
+            //print(diff)
             self.fdiff = 120 - diff
             
             
@@ -173,13 +173,15 @@ class AuctionVC: UIViewController {
         guard let uuid = product.uuid else {
             return
         }
-        print(currentBidLabel.text!)
+        //print(currentBidLabel.text!)
         DataService.instance.bid(product: product, amount: bidTextField.text!) { (success, tempTime) in
             if(success) {
                 self.messageDisplay(message: "A new bid of $\(self.bidTextField.text!) has been set")
                 self.currentBidLabel.text = self.bidTextField.text!
+
                 
                 print("You on the right track")
+
                 let myFloat = (tempTime as NSString).doubleValue
                 let diff = Date().timeIntervalSince1970 - myFloat
                 
@@ -198,7 +200,7 @@ class AuctionVC: UIViewController {
                 }
             } else
             {
-                print("False, alert msg")
+                //print("False, alert msg")
                 self.alertcontrollerDisplay(message: "Error. Enter a higher bid.")
             }
         }
@@ -226,11 +228,11 @@ class AuctionVC: UIViewController {
     }
     
     func downloadImage(from url: URL) {
-        print("Download Started")
+        //print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
+            //print(response?.suggestedFilename ?? url.lastPathComponent)
+            //print("Download Finished")
             DispatchQueue.main.async() {
                 self.productImageView.image = UIImage(data: data)
             }
