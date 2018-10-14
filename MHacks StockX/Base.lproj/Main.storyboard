@@ -627,6 +627,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gtV-KB-rY3">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.83529411764705885" green="0.88627450980392153" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.83529411760000005" green="0.8862745098" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -639,8 +641,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="36" height="36"/>
-        <image name="menu" width="36" height="36"/>
-        <image name="search" width="36" height="36"/>
+        <image name="back" width="18" height="18"/>
+        <image name="menu" width="18" height="18"/>
+        <image name="search" width="18" height="18"/>
     </resources>
 </document>
