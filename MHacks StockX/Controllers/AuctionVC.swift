@@ -116,69 +116,133 @@ class AuctionVC: UIViewController {
             return
         }
         
-        
-        
         self.DB_BASE.child("Products").child(product.uuid!).child("Bids").observe(.childAdded)  { (snapshot) in
             
             
-            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
-                return
-            }
             
-            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
-                return
-            }
-            
-            
-            
-            
-            if(amount != nil || amount != "") {
-                self.currentBidLabel.text = "\(amount)"
-                self.messageDisplayNoAction(message: "A new bid of $\(amount) has been set")
+            self.DB_BASE.child("Products").child(self.product.uuid!).child("HighestBid").observe(.value, with: { (snapshot) in
+                guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
+                    return
+                }
                 
-            } else {
-                self.currentBidLabel.text = "0"
-            }
-            
-            
-            let myFloat = (time as NSString).doubleValue
-            let diff = Date().timeIntervalSince1970 - myFloat
-            self.fdiff = 60 - diff
-            
-            
-            
-            if(self.fdiff > 1 && self.fdiff <= 60){
+                guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
+                    return
+                }
                 
                 
-                self.progressBar.startProgress(to: 0, duration: 1, completion: {
+                if(amount != nil || amount != "") {
+                    self.currentBidLabel.text = "\(amount)"
+                    self.messageDisplayNoAction(message: "A new bid of $\(amount) has been set")
+                    
+                } else {
+                    self.currentBidLabel.text = "0"
+                }
+                
+                
+                let myFloat = (time as NSString).doubleValue
+                let diff = Date().timeIntervalSince1970 - myFloat
+                self.fdiff = 60 - diff
+                
+                
+                
+                if(self.fdiff > 1 && self.fdiff <= 60){
                     
                     
-                    self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+                    self.progressBar.startProgress(to: 0, duration: 1, completion: {
                         
                         
-                        self.dismiss(animated: true, completion: nil)
-                        self.messageDisplay(message: "The auction is now over")
-                        self.DB_BASE.child("Products").child(uuid).removeValue()
-                        
-                        
+                        self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+                            
+                            
+                            self.dismiss(animated: true, completion: nil)
+                            self.messageDisplay(message: "The auction is now over")
+                            self.DB_BASE.child("Products").child(uuid).removeValue()
+                            
+                            
+                        })
                     })
-                })
+                    
+                    
+                    
+                    
+                }
+                else{
+                    self.DB_BASE.child("Products").child(uuid).removeValue()
+                    
+                }
                 
                 
                 
-                
-            }
-            else{
-                self.DB_BASE.child("Products").child(uuid).removeValue()
-                
-            }
+            })
             
             
             
             
-            
-        }
+                    }
         
+//
+//
+//        self.DB_BASE.child("Products").child(product.uuid!).child("Bids").observe(.childAdded)  { (snapshot) in
+//
+//
+//            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
+//                return
+//            }
+//
+//            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
+//                return
+//            }
+//
+//
+//
+//
+//            if(amount != nil || amount != "") {
+//                self.currentBidLabel.text = "\(amount)"
+//                self.messageDisplayNoAction(message: "A new bid of $\(amount) has been set")
+//
+//            } else {
+//                self.currentBidLabel.text = "0"
+//            }
+//
+//
+//            let myFloat = (time as NSString).doubleValue
+//            let diff = Date().timeIntervalSince1970 - myFloat
+//            self.fdiff = 60 - diff
+//
+//
+//
+//            if(self.fdiff > 1 && self.fdiff <= 60){
+//
+//
+//                self.progressBar.startProgress(to: 0, duration: 1, completion: {
+//
+//
+//                    self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
+//
+//
+//                        self.dismiss(animated: true, completion: nil)
+//                        self.messageDisplay(message: "The auction is now over")
+//                        self.DB_BASE.child("Products").child(uuid).removeValue()
+//
+//
+//                    })
+//                })
+//
+//
+//
+//
+//            }
+//            else{
+//                self.DB_BASE.child("Products").child(uuid).removeValue()
+//
+//            }
+//
+//
+//
+//
+//
+//        }
+//
         
         
     }
