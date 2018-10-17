@@ -206,17 +206,17 @@ class AuctionVC: UIViewController {
                     self.progressBar.startProgress(to: 0, duration: 0, completion: {
                         self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
                             self.dismiss(animated: true, completion: nil)
-                            self.specMessage(message: "The auction is now over")
+                            self.messageDisplay(message: "The auction is now over")
                             
-                             self.DB_BASE.child("Products").child(uuid).removeValue()
+                            
                         })
                     })
                     
 
-//                } else{
-//                    self.DB_BASE.child("Products").child(uuid).removeValue()
-//                }
+                } else{
+                    self.DB_BASE.child("Products").child(uuid).removeValue()
                 }
+                
             } else
             {
                 //print("False, alert msg")
