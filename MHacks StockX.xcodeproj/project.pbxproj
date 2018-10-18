@@ -151,7 +151,6 @@
 				4542056A21718462009B69FA /* AppDelegate.swift */,
 				D57E7C012172B3D40044BC65 /* GoogleService-Info.plist */,
 				4542056E21718462009B69FA /* Main.storyboard */,
-				C72F842E217368800024C4A3 /* UserBidsTableViewCell.swift */,
 				C702AD912172B41900A6A2A1 /* GoogleService-Info.plist */,
 				4542057421718465009B69FA /* Assets.xcassets */,
 				4542057621718465009B69FA /* LaunchScreen.storyboard */,
@@ -223,6 +222,7 @@
 		D57E7BE52171B4B10044BC65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C72F842E217368800024C4A3 /* UserBidsTableViewCell.swift */,
 				D57E7BED2171BF1F0044BC65 /* CatVCCollectionCell.swift */,
 				D57E7BEF2171C0900044BC65 /* Product.swift */,
 				D57E7BF7217256460044BC65 /* Config.swift */,
