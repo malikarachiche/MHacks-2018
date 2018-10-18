@@ -43,72 +43,7 @@ class AuctionVC: UIViewController {
     
     var maxProdAmount = "0.0"
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        
-//        print("\n\nIn will appear\n\n")
-//        guard let uuid = product.uuid else {
-//            return
-//        }
-//        self.DB_BASE.child("Products").child(uuid).child("HigestBid").observeSingleEvent(of: .value) { (snapshot) in
-//            
-//            
-//            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
-//                return
-//            }
-//            
-//            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
-//                return
-//            }
-//            
-//            
-//            
-//            if(amount != nil || amount != "") {
-//                self.currentBidLabel.text = "\(amount)"
-//                
-//            } else {
-//                self.currentBidLabel.text = "0"
-//            }
-//            
-//            let myFloat = (time as NSString).doubleValue
-//            let diff = Date().timeIntervalSince1970 - myFloat
-//            self.fdiff = 60 - diff
-//            
-//            
-//            
-//            if(self.fdiff > 1 && self.fdiff <= 60){
-//                
-//                
-//                self.progressBar.startProgress(to: 0, duration: 1, completion: {
-//                    
-//                    
-//                    self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
-//                        
-//                        
-//                        self.dismiss(animated: true, completion: nil)
-//                        self.messageDisplay(message: "The auction is now over")
-//                        self.DB_BASE.child("Products").child(uuid).removeValue()
-//                        
-//                        
-//                    })
-//                })
-//                
-//            }
-//            else{
-//                self.DB_BASE.child("Products").child(uuid).removeValue()
-//                
-//            }
-//            
-//            
-//            
-//            
-//            
-//        }
-//        
-//        
-//        
-//        
-//    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
@@ -153,6 +88,9 @@ class AuctionVC: UIViewController {
                         
                         self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
                             
+                             let values = ["Puid" : (Auth.auth().currentUser?.email)!, "Amount" : amount] as [String : String]
+                            
+                            self.DB_BASE.child("AuctionedItems").child(uuid).setValue(values)
                             
                             self.dismiss(animated: true, completion: nil)
                             self.messageDisplay(message: "The auction is now over")
@@ -180,70 +118,7 @@ class AuctionVC: UIViewController {
             
                     }
         
-//
-//
-//        self.DB_BASE.child("Products").child(product.uuid!).child("Bids").observe(.childAdded)  { (snapshot) in
-//
-//
-//            guard let time = snapshot.childSnapshot(forPath: "Time").value as? String else{
-//                return
-//            }
-//
-//            guard let amount = snapshot.childSnapshot(forPath: "Amount").value as? String else{
-//                return
-//            }
-//
-//
-//
-//
-//            if(amount != nil || amount != "") {
-//                self.currentBidLabel.text = "\(amount)"
-//                self.messageDisplayNoAction(message: "A new bid of $\(amount) has been set")
-//
-//            } else {
-//                self.currentBidLabel.text = "0"
-//            }
-//
-//
-//            let myFloat = (time as NSString).doubleValue
-//            let diff = Date().timeIntervalSince1970 - myFloat
-//            self.fdiff = 60 - diff
-//
-//
-//
-//            if(self.fdiff > 1 && self.fdiff <= 60){
-//
-//
-//                self.progressBar.startProgress(to: 0, duration: 1, completion: {
-//
-//
-//                    self.progressBar.startProgress(to: 100, duration: self.fdiff, completion: {
-//
-//
-//                        self.dismiss(animated: true, completion: nil)
-//                        self.messageDisplay(message: "The auction is now over")
-//                        self.DB_BASE.child("Products").child(uuid).removeValue()
-//
-//
-//                    })
-//                })
-//
-//
-//
-//
-//            }
-//            else{
-//                self.DB_BASE.child("Products").child(uuid).removeValue()
-//
-//            }
-//
-//
-//
-//
-//
-//        }
-//
-        
+
         
     }
     

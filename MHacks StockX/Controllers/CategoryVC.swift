@@ -76,7 +76,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 
                 self.productsArr = self.original
                 self.collectionView.reloadData()
-                //self.removeSpinner()
+                
                 
             } else {
             
@@ -146,8 +146,14 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatVCCollectionCell", for: indexPath) as! CatVCCollectionCell
-
-        cell.product = productsArr[indexPath.row]
+        
+        DataService.instance.checkIfAuctioned(uuid: productsArr[indexPath.row].uuid!, completion: { (success) in
+            if(success){
+                self.productsArr[indexPath.row].currentBid = " AUCTIONED $"
+            }
+            cell.product = self.productsArr[indexPath.row]
+        })
+        
         return cell
     }
     
@@ -159,8 +165,10 @@ class CategoryVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(productsArr[indexPath.row].currentBid != " AUCTIONED $"){
         selectedProduct = productsArr[indexPath.row]
         self.performSegue(withIdentifier: "auctionSegue", sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

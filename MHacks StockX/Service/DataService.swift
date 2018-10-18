@@ -107,7 +107,7 @@ class DataService{
                                 let description = item["shoe"].stringValue
                                 let uid = item["uuid"].stringValue
                                 
-                                var currentB = item["market"]["lowestAsk"].stringValue
+                                let currentB = item["market"]["lowestAsk"].stringValue
                                 
                                 let product = Product(description: description, currentBid: currentB, image: img, uuid: uid)
                                 productArray.append(product)
@@ -220,6 +220,21 @@ class DataService{
                 completion(String(amount))
                 
             }
+        }
+    }
+    
+    func checkIfAuctioned(uuid: String, completion: @escaping (Bool)->()){
+        DB_BASE.child("AuctionedItems").observe(.value) { (snapshot) in
+            
+            print("\n\n IN CHECKIFAUCTIONED \n\n")
+             guard let snapshot = snapshot.children.allObjects  as? [DataSnapshot] else { return }
+            for snap in snapshot{
+                if(snap.key == uuid){
+                    print("\n\n TRUE \n\n")
+                    completion(true)
+                }
+            }
+            completion(false)
         }
     }
     
